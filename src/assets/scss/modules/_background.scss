@@ -1,0 +1,27 @@
+/* BACKGROUNDS */
+.bg{
+    &-negro_1{
+        background-color: $color-negro_1;
+    }
+    &-verde_1{
+        background-color: $color-verde_1;
+    }
+    &-gris_1{
+        background-color: $color-gris_1;
+    }
+    &-grisClaro_1{
+        background-color: $color-grisClaro_1;
+    }
+    &-grisOscuro_1{
+        background-color: $color-grisOscuro_1;
+    }
+    &-grisOscuro_2{
+        background-color: $color-grisOscuro_2;
+    }
+    &-degrade{
+        background: $color-degrade;
+    }
+    &-azul_1{
+        background: $color-azul_1;
+    }
+}

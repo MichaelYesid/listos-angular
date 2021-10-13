@@ -1,0 +1,15 @@
+.btn{
+    &-custom{
+        &_colorSolido{
+            transition: all .3s ease-in-out;
+            &:hover,
+            &:focus,
+            &:active{}
+        }
+        &_colorBorder{
+            &:hover,
+            &:focus,
+            &:active{}
+        }
+    }
+}

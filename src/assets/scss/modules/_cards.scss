@@ -1,0 +1,10 @@
+/* CARDS */
+.card{
+    &-lp{
+        .card-header{}
+        &:hover,
+        &:focus,
+        &:active,
+        &.active{}
+    }
+}

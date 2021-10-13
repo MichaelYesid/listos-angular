@@ -1,0 +1,13 @@
+.section{
+    &-topbar{
+        h5{
+            font-size: 0.75rem;
+            @media #{$m1024}{
+                font-size: 0.95rem;
+            }
+        }
+    }
+    &-principalPage{
+        min-height: 70vh;
+    }
+}

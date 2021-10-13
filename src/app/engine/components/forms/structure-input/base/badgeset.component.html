@@ -1,0 +1,48 @@
+<div [formGroup]="form"  [ngClass]="(input.visible)?'':'d-none'">
+  <div class="row">
+    <div class="col-12 col-lg-5">
+
+      <!-- Label -->
+      <label
+        *ngIf=" input.controlType != 'inputCheckbox' && input.controlType != 'inputHr' && input.controlType != 'inputEmpty'  && input.type != 'checkbox' && input.type != 'radio' && input.type != 'checkbox'"
+        [attr.for]="input.key">{{input.label}} <span class="text-xs" *ngIf="input.required">(Requerido)</span></label>
+      
+      <!-- Input -->
+      <div class="form-row">
+        <div class="input-group input-group_autocomplete col-12" [class]="freeText? 'freetext': ''">
+          <input type="text"  class="form-control" [formControlName]="input.key" [id]="input.key" [value]="input.value"
+            [class.is-invalid]="searchFailed" [(ngModel)]="uppermodel" [ngbTypeahead]="search" placeholder="Escribe para autocompletar"
+            [inputFormatter]="inputFormatter"
+              [resultFormatter]="outputFormatter"
+              (selectItem)="SelectItem($event)"
+              [ngClass]="{
+              'is-valid': model.length > 0 && (formcontrol.dirty || formcontrol.touched), 
+              'is-invalid': model.length == 0 && (formcontrol.dirty || formcontrol.touched) }"/>
+          <div class="input-group-append"
+          [ngClass]="{
+            'is-valid': formcontrol.valid && (formcontrol.dirty || formcontrol.touched), 
+            'is-invalid': submitted && formcontrol.errors || ( formcontrol.invalid && (formcontrol.dirty || formcontrol.touched)) }">
+            <button class="btn btn-setValue" type="button" id="button-addon2" (click)="onAnadir()" *ngIf="freeText && tieneAnadir">Añadir</button>
+          </div>
+        </div>
+      </div>  
+      <app-autocomplete-helper [freeText]="freeText" [freeTextValid]="freeTextValid" [searchFailed]="searchFailed" [searching]="searching" [pleaseaddletters]="pleaseaddletters"></app-autocomplete-helper>
+
+      <!-- Message error -->
+      <app-validator-error *ngIf="input && form" [input]="input" [submitted]="submitted" [formcontrol]="formcontrol" [form]="form" class="message-error"></app-validator-error>
+
+      <!--<pre>Model: {{ model | json }}</pre>  -->
+    </div>
+
+    <!-- BADGET CHILD-->
+    <div class="col-12 col-lg-7">
+      <h4 class="text-sm pb-2 text-regular">Lista seleccionados:</h4>
+      <div class="card card-skills">
+        <div class="card-body py-4">
+          <app-badgeset-child [required]="input.required" [submitted]="submitted" (onRemoveItem)="onRemoveItem($event)" [items]="model" ></app-badgeset-child>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

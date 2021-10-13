@@ -1,0 +1,19 @@
+<div *ngIf="!ready || !conectorFormulario || !oldValuesCargados" class="row text-center">
+  <div class="col-12 text-center">
+  <app-loading-spinner class="text-center" [messageLoading]="messageCustomLoading"></app-loading-spinner>
+  </div>
+</div>
+<app-structure-form *ngIf="conectorFormulario?.form" class="row" 
+[class]="(!manageLoadingFromViews && ready && oldValuesCargados) || ( ready && manageLoadingFromViews && oldValuesCargados ) ?'':'d-none'"
+  [conectorFormulario]="conectorFormulario"
+    [title]="pageTitle"
+    [oldValues]="oldValues"
+    [requiereValoresPrevios]="false"
+    [hasSubmitButton]="hasSubmitButton"
+    [outputError]="outputError"
+    [customButtons]="customButtons"
+    [isUpdating]="isUpdating"
+    [label_submit]="label_submit?label_submit:'Guardar'" 
+    (onCancelEdit)="onCancelEdit()" 
+    (update)="UpdateForm($event)"
+    (payload)="PushForm($event)"></app-structure-form>

@@ -1,0 +1,106 @@
+<!-- INPUT NG FOR -->
+<div [ngSwitch]="input.controlType">
+
+    <!-- INPUT GENERAL -->
+    <app-text *ngSwitchCase="'inputText'" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [submitted]="submitted" [form]="form" [oldValue]="oldValue"
+        [title]="title"></app-text>
+    <!-- //// -->
+    <!-- INPUT GENERAL -->
+    <app-summary-text *ngSwitchCase="'inputTextSummary'" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [submitted]="submitted" [form]="form"
+        [oldValue]="oldValue" [title]="title"></app-summary-text>
+    <!-- //// -->
+
+    <!-- INPUT GENERAL -->
+    <app-input-hidden *ngSwitchCase="'inputHidden'" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [submitted]="submitted" [form]="form"
+        [oldValue]="oldValue" [title]="title"></app-input-hidden>
+    <!-- //// -->
+    <!-- INPUT PASSWORD GENERAL -->
+    <app-password *ngSwitchCase="'inputPassword'" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [submitted]="submitted" [form]="form"
+        [oldValue]="oldValue" [title]="title"></app-password>
+    <!-- //// -->    
+    <!-- SIGNATURE GENERAL -->
+    <app-signature *ngSwitchCase="'inputSignature'" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [submitted]="submitted" [form]="form"
+    [oldValue]="oldValue" [title]="title"></app-signature>
+    <!-- //// -->
+    <!-- SELECT GENERAL -->
+    <app-select *ngSwitchCase="'inputSelect'" [optionMakers]="input.options" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [submitted]="submitted" [form]="form"
+        [oldValue]="oldValue" [title]="title"></app-select>
+    <!-- //// -->
+    <!-- AUTOCOMPLETE GENERAL -->
+    <app-autocomplete-freetext *ngSwitchCase="'inputAutoCompleteFreeText'" [optionMakers]="input.options" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [form]="form"
+        [oldValue]="oldValue" [title]="title"></app-autocomplete-freetext>
+    <!-- //// --> 
+    <!-- BADGET GENERAL -->
+    <app-badgeset *ngSwitchCase="'inputBadgeSet'" [optionMakers]="input.options" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [form]="form" [submitting]="submitting"
+        [oldValue]="oldValue" [title]="title"></app-badgeset>
+    <!-- //// -->
+    <!-- BADGET NOT FREE GENERAL -->
+    <app-badgeset-not-free *ngSwitchCase="'inputBadgeSetNotFree'" [optionMakers]="input.options" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [form]="form"
+        [submitting]="submitting" [oldValue]="oldValue" [title]="title">
+    </app-badgeset-not-free>
+    <!-- //// -->
+    <!-- AUTOCOMPLETE GENERAL -->
+    <app-input-anchor *ngSwitchCase="'inputAnchor'" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [form]="form" [oldValue]="oldValue"
+        [title]="title"></app-input-anchor>
+    <!-- //// -->
+    <!-- AUTOCOMPLETE GENERAL -->
+    <app-autocomplete *ngSwitchCase="'inputAutoComplete'" [optionMakers]="input.options" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [form]="form" [oldValue]="oldValue"
+        [title]="title"></app-autocomplete>
+    <!-- //// -->
+    <!-- INPUT REPEATER -->
+    <app-input-repeater *ngSwitchCase="'inputRepeater'" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [form]="form" [oldValue]="oldValue"
+        [title]="title"></app-input-repeater>
+    <!-- //// -->
+    <!-- INPUT CHECKBOX -->
+    <app-checkbox *ngSwitchCase="'inputCheckbox'" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [submitted]="submitted" [form]="form"
+        [oldValue]="oldValue" [title]="title"></app-checkbox>
+    <!-- //// -->
+    <!-- INPUT Empty -->
+    <app-empty *ngSwitchCase="'inputEmpty'" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [title]="title"></app-empty>
+    <!-- //// -->
+    <!-- INPUT RATING -->
+    <app-rating *ngSwitchCase="'inputRating'" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [submitted]="submitted" [form]="form"
+        [oldValue]="oldValue" [title]="title"></app-rating>
+    <!-- //// -->
+    <!-- INPUT FILE -->
+    <app-direccion *ngSwitchCase="'inputDireccion'" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [submitted]="submitted" [form]="form" [oldValue]="oldValue"
+        [title]="title"></app-direccion>
+    <!-- //// -->
+     <!-- INPUT DIRECCION -->
+     <app-file *ngSwitchCase="'inputFile'" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [submitted]="submitted" [form]="form" [oldValue]="oldValue"
+     [title]="title"></app-file>
+ <!-- //// -->
+    <!-- INPUT HR -->
+    <app-hr *ngSwitchCase="'inputHr'" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [title]="title"></app-hr>
+    <!-- INPUT DATEPICKER -->
+    <app-date *ngSwitchCase="'inputDate'" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [submitted]="submitted" [form]="form" [oldValue]="oldValue"
+        [title]="title"></app-date>
+    <!-- //// -->
+    <app-hour *ngSwitchCase="'inputHour'" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [submitted]="submitted" [form]="form" [oldValue]="oldValue"
+        [title]="title"></app-hour>
+    <!-- //// -->
+    <!-- INPUT DATEPICKER -->
+    <app-month-date *ngSwitchCase="'inputMonthDate'" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [form]="form" [oldValue]="oldValue"
+        [title]="title"></app-month-date>
+    <!-- //// -->
+    <!-- TEXTAREA -->
+    <app-textarea *ngSwitchCase="'inputTextarea'" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [submitted]="submitted" [form]="form"
+        [oldValue]="oldValue" [title]="title"></app-textarea>
+    <!-- ERROR MESSAGE -->
+    <!-- //// -->
+    <!-- INPUT CHECKBOX FILTERS -->
+    <app-checkbox-multiple *ngSwitchCase="'inputCheckboxMultiple'" [optionMakers]="input.options" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [submitted]="submitted" [form]="form"
+        [oldValue]="oldValue" [title]="title"></app-checkbox-multiple>
+    <!-- //// -->
+    <!-- INPUT SLIDER RANGE -->
+    <app-slider-range *ngSwitchCase="'inputSliderRange'" [optionMakers]="input.options" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [submitted]="submitted" [form]="form"
+        [oldValue]="oldValue" [title]="title"></app-slider-range>
+    <!-- //// -->
+    <!-- INPUT CURRENCY -->
+    <app-currency-input *ngSwitchCase="'inputCurrency'" [input]="input" [formcontrol]="formcontrol" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [submitted]="submitted" [form]="form" [oldValue]="oldValue"
+        [title]="title"></app-currency-input>
+    <!-- //// -->
+     <!-- HTML CUSTOM -->
+     <app-html-forms *ngSwitchCase="'inputHTML'" [input]="input" [onBlurFunction]="onBlurFunction" [onFocusFunction]="onFocusFunction" [title]="title"></app-html-forms>
+ <!-- //// -->
+</div>

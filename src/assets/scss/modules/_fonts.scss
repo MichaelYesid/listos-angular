@@ -1,0 +1,88 @@
+// FONTS
+
+.text{
+    //COLORS
+    &-gris_1{
+        color: $color-gris_1;
+    }
+    &-negro_1{
+        color: $color-negro_1;
+    }
+    &-blanco{
+        color: $color-blanco;
+    }
+    &-rojo_1{
+        color: $color-rojo_1;
+    }
+    &-azul_1{
+        color: $color-azul_1;
+    }
+    &-verde_1{
+        color: $color-verde_1;
+    }
+    //FONT SIZE
+    &-xs{
+        font-size: 0.7rem;
+    }
+    &-s{
+        font-size: 0.8rem;
+    }
+    &-sx{
+        font-size: 0.85rem;
+    }
+    &-sm{
+        font-size: 0.9rem;
+    }
+    &-smx{
+        font-size: 0.95rem;
+    }
+    &-md{
+        font-size: 1rem;
+    }
+    &-mdx{
+        font-size: 1.15rem;
+    }
+    &-lg{
+        font-size: 1.25rem;
+    }
+    &-lgx{
+        font-size: 1.5rem;
+    }
+    &-xl{
+        font-size: 2rem;
+    }
+    &-xlx{
+        font-size: 2.25rem;
+    }
+    &-xxl{
+        font-size: 2.5rem;
+    }
+    //FONT WEIGHT
+    &-extraLight{
+        font-weight: 200;
+    }
+    &-lightFont{
+        font-weight: 300;
+    }
+    &-regular{
+        font-weight: 400;
+    }
+    &-medium{
+        font-weight: 500;
+    }
+    &-semiBold{
+        font-weight: 600;
+    }
+    &-bold{
+        font-weight: 700;
+    }
+    &-black{
+        font-weight: 900;
+    }
+    //LINES HEIGHT
+    &-lineHeight{
+        &-1{
+            line-height: 1;
+        }
+    }
+}

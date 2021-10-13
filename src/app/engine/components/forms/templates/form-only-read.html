@@ -1,0 +1,17 @@
+<div *ngIf="!ready || !conectorFormulario || !oldValuesCargados" class="row text-center">
+    <div class="col-12 text-center">
+    <app-loading-spinner class="text-center" ></app-loading-spinner>
+    </div>
+  </div>
+<app-structure-form *ngIf="conectorFormulario?.form" class="row" 
+    [class]="(ready && oldValuesCargados)?'':'d-none'"
+    [title]="pageTitle"
+    [customButtons]="customButtons"
+    [oldValues]="oldValues"
+    [outputError]="outputError"
+    [hasSubmitButton]="hasSubmitButton"
+    [conectorFormulario]="conectorFormulario"
+    [isUpdating]="false"
+    [requiereValoresPrevios]="true"
+    [onlyRead]="true"
+    ></app-structure-form>

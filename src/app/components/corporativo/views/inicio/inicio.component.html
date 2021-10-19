@@ -1,1 +1,149 @@
-<p>inicio works!</p>
+<section class="row section-inicio">
+    <!-- SECCION SLIDER PRINCIPAL -->
+    <div class="col-12">
+        <app-owl-carousel [customOptions]="OwlCarouselPrincipalOptions" [slidesStore]="SlidesPrincipal" ></app-owl-carousel>
+    </div>
+    <!-- SECCION SERVICIOS -->
+    <div class="col-12 py-4 my-4 py-lg-5 my-lg-5 section-inicio_servicios">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 text-center">
+                <h2 class="text-verde_1 text-bold mb-3">Servicios</h2>
+            </div>
+            <div class="col-12 col-lg-9 col-xl-8 col-xxl-7 text-center mb-4">
+                <p>Aquí seria bueno hablar de forma somera acerca de estos servicios, ya que al estar en el index debe dar una respuesta inmediata de lo que hace y en pocas palabras, para no retrazar la asimilación de la informacion al usuario.</p>
+            </div>
+            <div class="col-10 col-sm-8 col-lg-10">
+                <app-owl-carousel [customOptions]="OwlCarouselServiciosOptions" [slidesStore]="SlidesServicios" [customTemplateSlide]="OwlCarouselServicios" class="section"></app-owl-carousel>
+                <ng-template let-slide="slide" #OwlCarouselServicios>
+                    <div class="card card-servicios_owlcarousel">
+                        <div class="card-header">
+                            <img [src]="slide.IMAGEN" [alt]="slide.TEXTO" [title]="slide.TEXTO" class="img-fluid">
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="text-lg text-negro_1 text-bold">{{ slide.TITULO }}</h4>
+                            <p class="text-negro_1">{{ slide.TEXTO }}</p>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+    <!-- SECCION CTA -->
+    <div class="col-12 section-inicio_cta bg-verde_1">
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-between">
+                <div class="col-12 col-lg-6 py-5 text-center text-lg-start">
+                    <h2 class="text-blanco text-bold mb-3">Entendemos que tu empresa</h2>
+                    <p class="text-blanco">Es el activo mas preciado y por esta razón queremos ayudarte por medio de nuestra calidad y experiencia en el mercado del talento humano.</p>
+                    <button class="btn btn-outlineBlanco text-blanco mt-2">¡Estoy interesado!</button>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <img src="/assets/images/imagen-provisional-entendemos.png" alt="" class="img-fluid w-100">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SECCION METRICAS -->
+    <div class="col-12 py-4 my-4 py-lg-5 my-lg-5 section-inicio_metricas">
+        <div class="container">
+            <div class="row d-flex align-items-stretch">
+                <div class="col-12 text-center">
+                    <h2 class="text-verde_1 text-bold mb-5">Nuestras métricas</h2>
+                </div>
+                <div class="col-12 col-lg-3 text-center mb-5 mb-lg-0">
+                    <h2 class="text-jumbo text-verde_1 text-bold text-poppins">350</h2>
+                    <h5 class="text-mdx">Clientes naturales</h5>
+                </div>
+                <div class="col-12 col-lg-3 text-center mb-5 mb-lg-0">
+                    <h2 class="text-jumbo text-verde_1 text-bold text-poppins">4500</h2>
+                    <h5 class="text-mdx">Trabajadores en misión</h5>
+                </div>
+                <div class="col-12 col-lg-3 text-center mb-5 mb-lg-0">
+                    <h2 class="text-jumbo text-verde_1 text-bold text-poppins">2500</h2>
+                    <h5 class="text-mdx">Vacantes activas</h5>
+                </div>
+                <div class="col-12 col-lg-3 text-center mb-5 mb-lg-0">
+                    <h2 class="text-jumbo text-verde_1 text-bold text-poppins">15.000</h2>
+                    <h5 class="text-mdx">Banco de talento</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SECCION CLUSTERS -->
+    <div class="col-12 py-4 py-lg-5 section-inicio_clusters bg-grisClaro_2">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 d-flex flex-column justify-content-center text-center pt-4">
+                    <img src="/assets/images/logo_listos_color.png" alt="" class="logo-listos mx-auto mb-3">
+                    <h2 class="text-verde_1 text-bold mb-2">Nuestros clústers</h2>
+                    <p>Estamos en diversos ambitos de la industria fomentando el empleo y la inclusión.</p>
+                </div>
+                <div class="col-10 col-lg-12 mt-3 mb-5">
+                    <div class="row">
+                        <div class="col-12 col-lg-3 py-3" *ngFor="let item of Clusters">
+                            <div class="w-100 d-flex align-items-center cluster-item pe-4">
+                                <img [src]="item.icon" alt="" class="">
+                                <h4 class="text-gris_2 text-mdx mb-0">{{item.title}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SECCION LP NUEVAS GENERACIONES -->
+    <div class="col-12 section-inicio_clusters bg-grisClaro_2">
+        <img src="/assets/images/inicio/banner-nuevas-generaciones.png" alt="" class="img-fluid">
+    </div>
+    <!-- SECCION LP NUEVAS NOTICIAS -->
+    <div class="col-12 py-4 py-lg-5 section-inicio_noticias bg-verde_1">
+        <div class="container">
+            <div class="row d-flex align-items-stretch py-4 py-lg-5">
+                <div class="col-12 text-center">
+                    <h2 class="text-blanco text-bold mb-3">Noticias</h2>
+                    <p class="text-blanco">Encontraras las ultimas noticias en marketing y todo lo relacionado con Listos.</p>
+                </div>
+                <div class="col-12 col-lg-10">
+                    <div class="row">
+                        <div class="col-12 col-lg-4">
+                            <div class="card card-noticias">
+                                <div class="card-body">
+                                    
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SECCION PREGUNTAS FRECUENTES -->
+    <div class="col-12 py-4 my-4 py-lg-5 my-lg-5 section-inicio_faqs">
+        <div class="container">
+            <div class="row d-flex align-items-stretch">
+                <div class="col-12 text-center">
+                    <h2 class="text-verde_1 text-bold mb-4">Preguntas frecuentes</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SECCION ALIADOS ESTRATEGICOS -->
+    <div class="col-12 py-4 py-lg-5 section-inicio_clusters bg-grisClaro_2">
+        <div class="row py-4 py-lg-5">
+            <div class="col-12 text-center">
+                <h2 class="text-verde_1 text-bold mb-4">Aliados estratégicos</h2>
+            </div>
+        </div>
+    </div>
+    <!-- SECCION CONTACTANOS -->
+    <div class="col-12 py-4 my-4 py-lg-5 my-lg-5 section-inicio_faqs">
+        <div class="container">
+            <div class="row d-flex align-items-stretch">
+                <div class="col-12 text-center">
+                    <h2 class="text-verde_1 text-bold mb-3">Contáctanos</h2>
+                    <p>Escríbenos, queremos saber como podemos ayudarte.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

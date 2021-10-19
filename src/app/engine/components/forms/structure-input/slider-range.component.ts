@@ -10,7 +10,7 @@ import { MyCustomFormControl } from '../classes/generic-form.classes';
     
     <!-- Input -->
     <div class="row">
-      <div class="col-6 text-left">
+      <div class="col-6 text-start">
         {{ valueMin | currency:'COP':'$': '1.0-0' }}
       </div>
       <div class="col-6 text-right">

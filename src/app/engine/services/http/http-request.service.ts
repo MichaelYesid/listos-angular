@@ -67,14 +67,16 @@ export class HttpRequestService {
       if(typeof ErrFoo !== 'undefined')
         ProcessingFoo('MOSTRAMOS FINAL');
 
-      let form_data = new FormData();
+      // let form_data = new FormData();
       
-      for ( var key in data ) { 
-        if(data[key]){
-          form_data.append(key, data[key]);
-        }
-      }
+      // for ( var key in data ) { 
+      //   if(data[key]){
+      //     form_data.append(key, data[key]);
+      //   }
+      // }
       
+      let form_data = data;
+
       responseReq = await this.ConnectionTrier(
         typeofRequest,
         apiURL,

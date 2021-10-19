@@ -8,7 +8,7 @@ import { MyCustomFormControl } from '../classes/generic-form.classes';
   selector: 'app-hr',
   template: `
   <div [class]="input.classGrid"  [ngClass]="(input.visible)?'':'d-none'">
-    <hr class="w-100 text-left m-0 p-0 mt-4 mb-4 pb-3" />
+    <hr class="w-100 text-start m-0 p-0 mt-4 mb-4 pb-3" />
   </div>`,
   styles: [
   ]

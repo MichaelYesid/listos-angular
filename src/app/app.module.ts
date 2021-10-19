@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { HttpClientModule } from '@angular/common/http';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +17,7 @@ import { FormOptionsFetcherService } from './engine/services/form-connection/for
 import { WithLoadingService } from './engine/services/custom-connections/with-loading.service';
 import { LoadingModalService } from './engine/services/custom-connections/loading-modal.service';
 import { AlertService } from './engine/services/alerts/alerts.service';
+import { OwlCarouselComponent } from './components/corporativo/modules/owl-carousel/owl-carousel.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +26,14 @@ import { AlertService } from './engine/services/alerts/alerts.service';
     QuienesSomosComponent,
     CorporativoComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    OwlCarouselComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule
+    CarouselModule
   ],
   providers: [
     AlertService,

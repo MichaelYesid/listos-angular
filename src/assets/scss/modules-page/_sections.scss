@@ -1,0 +1,104 @@
+.section{
+    &-topbar{
+        h5{
+            font-size: 0.75rem;
+            @media #{$m1024}{
+                font-size: 0.95rem;
+            }
+        }
+    }
+    &-principalPage{
+        margin-top: 110px;
+        min-height: 60vh;
+        @media #{$m1024}{
+            margin-top: 130px;
+        }
+    }
+    &-owlCarousel{
+        position: relative;
+        .owl-carousel{
+            & .owl-nav{
+                position: absolute;
+                transform: translate(-50%,-50%);
+                left: 50%;
+                top: 48%;
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                & [class*=owl-]{
+                    color: $color-verde_1;
+                    border-radius: 100%;
+                    height: 50px;
+                    width: 50px;
+                    display: flex !important;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0px;
+                    margin: 0px;
+                    font-size: 3.2rem;
+                    background-color: transparent;
+                    &.owl-prev{
+                        margin-left: 4.5vw !important;
+                    }
+                    &.owl-next{
+                        margin-right: 4.5vw !important;
+                    }
+                }
+            }
+            & .owl-dots{
+                position: absolute;
+                transform: translateX(-50%);
+                left: 50%;
+                bottom: 25px;
+                width: 100%;
+                & .owl-dot{
+                    span{
+                        background-color: $color-blanco;
+                        border: 1px solid $color-blanco;
+                        width: 13px;
+                        height: 13px;
+                        opacity: 0.95;
+                    }
+                    &.active{
+                        span{
+                            background-color: $color-verde_1;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-inicio_servicios{
+        .owl-carousel{
+            & .owl-nav{
+                & [class*=owl-]{
+                    &.owl-prev{
+                        margin-left: -4.1vw !important;
+                    }
+                    &.owl-next{
+                        margin-right: -4.1vw !important;
+                    }
+                }
+            }
+        }
+    }
+    &-inicio_cta{
+        box-shadow: 6px 6px 20px -5px #0000004d;
+    }
+    &-inicio_clusters{
+        .logo-listos{
+            max-width: 130px !important;
+            width: 100%;
+        }
+        .cluster-item{
+            img{
+                width: 50px;
+                height: 35px;
+                object-fit: contain;
+                overflow: hidden;
+                margin-right: 1.2rem;
+            }
+        }
+    }
+}

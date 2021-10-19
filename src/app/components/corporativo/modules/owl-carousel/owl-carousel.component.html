@@ -1,0 +1,14 @@
+
+<section class="section-owlCarousel">
+    <owl-carousel-o [options]="customOptions" *ngIf="customOptions !== undefined">
+        <ng-container *ngFor="let slide of slidesStore">
+            <ng-template carouselSlide [id]="slide.id">
+                <ng-container [ngTemplateOutlet]="customTemplateSlide ? customTemplateSlide : defaultTemplateSlide" [ngTemplateOutletContext]="{slide:slide}"></ng-container>
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
+</section>
+
+<ng-template #defaultTemplateSlide let-slide="slide">
+    <img [src]="slide.IMAGEN" [alt]="slide.TEXTO" [title]="slide.TEXTO" class="img-fluid w-100">
+</ng-template>

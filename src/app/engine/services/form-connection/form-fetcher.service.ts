@@ -17,14 +17,14 @@ export class FormFetcherService {
   
   async FetchPreviousData( fetchcontext: FetchContext, data:any ): Promise<any[]> {
 
-    console.log('ENTRAMOS ACA 1', fetchcontext.apiURL);
+    // console.log('ENTRAMOS ACA 1', fetchcontext.apiURL);
     let apiURL = fetchcontext.apiURL;
     
     if ((fetchcontext as LocalDataFetchContext).data){
       return (fetchcontext as LocalDataFetchContext).data
     }
-    
-    console.log(data);
+  
+    // console.log(data);
     return await this.httpRequestService.POST( apiURL, data, undefined, undefined, undefined, undefined, undefined, undefined)
   }
 

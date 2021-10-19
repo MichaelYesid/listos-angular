@@ -7,7 +7,10 @@
         min-height: 90px;
         & .navbar-brand{
             img{
-                max-width: 56px;
+                max-width: 45px;
+                @media #{$m1024}{
+                    max-width: 56px;
+                }
             }
         }
         & .nav-item{

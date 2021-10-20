@@ -15,16 +15,21 @@ export class InicioComponent implements OnInit {
 
   OwlCarouselPrincipalOptions:any;
   OwlCarouselServiciosOptions:any;
+  OwlCarouselNoticiasOptions:any;
+  OwlCarouselAliadosOptions:any;
 
   SlidesPrincipal:any
   SlidesServicios:any
+  SlidesNoticias:any
+  SlidesAliados:any
+
   Clusters:any;
 
   constructor(
     private titleService: Title,
     private metaTagService: Meta,
     private fetchPreviousData: FormFetcherService
-  ) { 
+  ) {
 
     this.OwlCarouselPrincipalOptions = {
       loop: true,
@@ -78,6 +83,70 @@ export class InicioComponent implements OnInit {
         }
       },
       nav: true
+    }
+
+    this.OwlCarouselNoticiasOptions = {
+      loop: true,
+      margin: 30,
+      stagePadding: 0,
+      mouseDrag: true,
+      touchDrag: false,
+      pullDrag: false,
+      dots: false,
+      autoWidth:true,
+      responsiveClass: true,
+      responsiveRefreshRate: 200,
+      responsiveBaseElement: 'window',
+      autoHeight: true,
+      smartSpeed: 800,
+      navSpeed: 800,
+      navText: [ '', '' ],
+      responsive: {
+        0: {
+          items: 1,
+          nav: false,
+        },
+        768: {
+          items: 2,
+          nav: false,
+        },
+        1024: {
+          items: 3,
+          nav: false,
+        }
+      }
+    }
+
+    this.OwlCarouselAliadosOptions = {
+      loop: true,
+      margin: 20,
+      stagePadding: 0,
+      mouseDrag: true,
+      touchDrag: false,
+      pullDrag: false,
+      dots: false,
+      autoWidth:true,
+      responsiveClass: true,
+      responsiveRefreshRate: 200,
+      responsiveBaseElement: 'window',
+      autoHeight: true,
+      smartSpeed: 800,
+      navSpeed: 800,
+      navText: [ '', '' ],
+      responsive: {
+        0: {
+          items: 2,
+          nav: false,
+        },
+        768: {
+          items: 4,
+          nav: false,
+        },
+        1024: {
+          items: 6,
+          nav: false,
+        }
+      }
     }
 
     this.Clusters = [
@@ -166,6 +235,8 @@ export class InicioComponent implements OnInit {
     let responseDataCategoriasRequerimientos = await this.fetchPreviousData.FetchPreviousData(new ConsultarDatosPaginaContext, data ).then( (data:any) =>{
       this.SlidesPrincipal = data.banner;
       this.SlidesServicios = data.servicios;
+      this.SlidesNoticias = data.noticias;
+      this.SlidesAliados = data.aliados;
     });
   }
 

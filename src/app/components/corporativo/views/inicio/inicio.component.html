@@ -98,21 +98,26 @@
     <!-- SECCION LP NUEVAS NOTICIAS -->
     <div class="col-12 py-4 py-lg-5 section-inicio_noticias bg-verde_1">
         <div class="container">
-            <div class="row d-flex align-items-stretch py-4 py-lg-5">
+            <div class="row d-flex align-items-stretch justify-content-center py-4 py-lg-5">
                 <div class="col-12 text-center">
                     <h2 class="text-blanco text-bold mb-3">Noticias</h2>
                     <p class="text-blanco">Encontraras las ultimas noticias en marketing y todo lo relacionado con Listos.</p>
                 </div>
-                <div class="col-12 col-lg-10">
-                    <div class="row">
-                        <div class="col-12 col-lg-4">
-                            <div class="card card-noticias">
-                                <div class="card-body">
-                                    
+                <div class="col-12 col-lg-10 mt-3">
+                    <app-owl-carousel [customOptions]="OwlCarouselNoticiasOptions" [slidesStore]="SlidesNoticias" [customTemplateSlide]="OwlCarouselNoticias" class="section"></app-owl-carousel>
+                    <ng-template let-slide="slide" #OwlCarouselNoticias>
+                        <div class="card card-noticias_owlcarousel">
+                            <div class="card-body" style="background-image: url('{{ slide.IMAGEN }}')">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-11 col-lg-9">
+                                        <h4 class="text-blanco text-lg text-bold">{{ slide.TITULO }}</h4>
+                                        <p class="text-blanco text-md">{{ slide.TEXTO }}</p>      
+                                        <button class="btn btn-outlineBlanco text-blanco mt-4">Leer más</button> 
+                                    </div>
                                 </div>
-                            </div>    
+                            </div>
                         </div>
-                    </div>
+                    </ng-template>
                 </div>
             </div>
         </div>
@@ -129,9 +134,14 @@
     </div>
     <!-- SECCION ALIADOS ESTRATEGICOS -->
     <div class="col-12 py-4 py-lg-5 section-inicio_clusters bg-grisClaro_2">
-        <div class="row py-4 py-lg-5">
-            <div class="col-12 text-center">
-                <h2 class="text-verde_1 text-bold mb-4">Aliados estratégicos</h2>
+        <div class="container">
+            <div class="row py-4 py-lg-5">
+                <div class="col-12 text-center">
+                    <h2 class="text-verde_1 text-bold mb-4">Aliados estratégicos</h2>
+                </div>
+                <div class="col-12 mt-3">
+                    <app-owl-carousel [customOptions]="OwlCarouselAliadosOptions" [slidesStore]="SlidesAliados"></app-owl-carousel>
+                </div>
             </div>
         </div>
     </div>

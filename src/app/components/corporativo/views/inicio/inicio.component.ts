@@ -24,6 +24,7 @@ export class InicioComponent implements OnInit {
   SlidesAliados:any
 
   Clusters:any;
+  PreguntasFrecuentes:any;
 
   constructor(
     private titleService: Title,
@@ -237,6 +238,7 @@ export class InicioComponent implements OnInit {
       this.SlidesServicios = data.servicios;
       this.SlidesNoticias = data.noticias;
       this.SlidesAliados = data.aliados;
+      this.PreguntasFrecuentes = data.prefre;
     });
   }
 

@@ -1,13 +1,6 @@
 import { Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Subject } from 'rxjs';
-import { BaseSelfMadeList } from 'src/app/engine/context/classes/form-options-bylist-selfmade.classes';
-import { ListContext } from 'src/app/engine/context/classes/form-options-bylist.classes';
-import { CiudadfetcherService } from 'src/app/engine/components/services/misc/ciudadfetcher.service';
-import { FormOptionsFetcherService } from 'src/app/engine/services/form-connection/form-options-fetcher.service';
-import { FormOptionsSelfmadeFetcherService } from 'src/app/engine/services/form-connection/form-options-selfmade-fetcher.service';
-import { AbstractValueSetter } from './base/abstract-value-setter.helper';
 import { MultiOptionsBase } from './base/multioptions-base';
 import { MyCustomFormControl } from '../classes/generic-form.classes';
 
@@ -20,7 +13,7 @@ import { MyCustomFormControl } from '../classes/generic-form.classes';
     *ngIf="!input?.params?.noMostrarLabel && input.controlType != 'inputCheckbox' && input.controlType != 'inputHr' && input.controlType != 'inputEmpty'  && input.type != 'checkbox' && input.type != 'radio' && input.type != 'checkbox'"
     [attr.for]="input.key">{{input.label}} <span class="text-xs" *ngIf="input.required">(Requerido)</span></label>
     <!-- Input -->
-    <select autocomplete="off" (focus)="onFocus($event)" (change)="valueSet($event)" [attr.data-value]="finalValue" [formControlName]="input.key" [id]="input.key" class="form-control"  [value]="input.value"
+    <select autocomplete="off" (focus)="onFocus($event)" (change)="valueSet($event)" [attr.data-value]="finalValue" [formControlName]="input.key" [id]="input.key" class="form-control form-select"  [value]="input.value"
       [ngClass]="{
         'is-valid': finalValue !== '' && formcontrol.touched, 
         'is-invalid': ( finalValue == '' && (submitted && formcontrol.errors ) ) || ( finalValue == '' && (formcontrol.dirty || formcontrol.touched) ) }">
@@ -45,14 +38,6 @@ export class SelectComponent extends MultiOptionsBase implements OnInit {
   @Input() onBlurFunction:any;
   @Input() formcontrol:MyCustomFormControl=null!;
 
-  constructor(
-    protected ciudadfetcherService:CiudadfetcherService,
-    protected formOptionsFetcherService:FormOptionsFetcherService,
-  )
-  {
-    super(ciudadfetcherService,formOptionsFetcherService)
-  }  
-  
   onFocus = ($event:any) => {
     if(this.onFocusFunction){
       if(typeof this.onFocusFunction==="function"){
@@ -80,9 +65,9 @@ export class SelectComponent extends MultiOptionsBase implements OnInit {
 
   setPreviousSelectValue = async () => {
     if(this.oldValue && this.options){
-    this.formcontrol.setValue(this.oldValue)
-    this.ready=true
-  }
+      this.formcontrol.setValue(this.oldValue)
+      this.ready=true
+    }
   }
   
 }

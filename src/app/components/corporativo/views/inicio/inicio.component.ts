@@ -25,6 +25,7 @@ export class InicioComponent implements OnInit {
 
   Clusters:any;
   PreguntasFrecuentes:any;
+  MotivosContacto:any;
 
   constructor(
     private titleService: Title,
@@ -239,7 +240,15 @@ export class InicioComponent implements OnInit {
       this.SlidesNoticias = data.noticias;
       this.SlidesAliados = data.aliados;
       this.PreguntasFrecuentes = data.prefre;
+      this.MotivosContacto = data.contactanos;
+      // console.log(data);
     });
   }
+
+  
+  getResponseForm(event:any){
+    console.log(event);
+  }
+
 
 }

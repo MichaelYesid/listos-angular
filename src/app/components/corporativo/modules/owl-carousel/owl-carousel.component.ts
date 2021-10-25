@@ -12,8 +12,9 @@ export class OwlCarouselComponent implements OnInit {
   @Input() customTemplateSlide?: TemplateRef<any>;
 
   constructor() { }
-
+  
   ngOnInit(): void {
+    // console.log(this.customOptions, this.slidesStore);
   }
 
 }

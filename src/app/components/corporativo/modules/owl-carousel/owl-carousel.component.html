@@ -1,6 +1,6 @@
 
 <section class="section-owlCarousel">
-    <owl-carousel-o [options]="customOptions" *ngIf="customOptions !== undefined">
+    <owl-carousel-o [options]="customOptions" *ngIf="customOptions !== undefined && slidesStore !== undefined">
         <ng-container *ngFor="let slide of slidesStore">
             <ng-template carouselSlide [id]="slide.id">
                 <ng-container [ngTemplateOutlet]="customTemplateSlide ? customTemplateSlide : defaultTemplateSlide" [ngTemplateOutletContext]="{slide:slide}"></ng-container>

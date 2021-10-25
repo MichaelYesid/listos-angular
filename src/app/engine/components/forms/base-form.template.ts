@@ -1,14 +1,7 @@
 import { ConectorFormulario, ConectorInputForm, StructureInput } from 'src/app/engine/components/forms/classes/generic-input-base.classes';
-import { FormFetcherService } from 'src/app/engine/services/form-connection/form-fetcher.service';
-import { FormPusherService } from 'src/app/engine/services/form-connection/form-pusher.service';
-import { PushContext } from 'src/app/engine/context/classes/form-options-bylist.classes';
-import { of, Subject } from 'rxjs';
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { MyCustomFormControl } from 'src/app/engine/components/forms/classes/generic-form.classes';
-import { SidebarStatusService } from 'src/app/components/dashboard-cv/services/sidebar-status.service';
-import { Router } from '@angular/router';
-import { NextFormService } from 'src/app/components/dashboard-cv/services/next-form.service';
 
 @Component({
   selector: 'app-base-form',

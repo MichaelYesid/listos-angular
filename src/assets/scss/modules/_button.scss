@@ -17,4 +17,10 @@
         border: 1px solid #fff;
         border-radius: 0px;
     }
+    &-submit{
+        border-radius: 0px !important;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        font-weight: 600;
+    }
 }

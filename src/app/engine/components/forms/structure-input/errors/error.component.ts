@@ -7,7 +7,7 @@ import { MyCustomFormControl } from '../../classes/generic-form.classes';
   selector: 'app-validator-error',
   template: ` 
   <div [formGroup]="form">
-    <div class="errorMessage text-danger mt-1 py-2 text-s"
+    <div class="errorMessage text-danger mt-1 pt-2 pb-1 text-s"
       *ngIf="statusCustomError || ( submitted && formcontrol.errors ) || ( formcontrol.invalid && (formcontrol.dirty || formcontrol.touched ) )">
       El campo <strong>{{input.label}}</strong> {{ responseError }}
     </div>

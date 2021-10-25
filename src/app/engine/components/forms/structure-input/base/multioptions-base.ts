@@ -4,7 +4,6 @@ import { BaseSelfMadeList } from "src/app/engine/context/classes/form-options-by
 import { ListContext } from "src/app/engine/context/classes/form-options-bylist.classes";
 import { FormOptionsFetcherService } from "src/app/engine/services/form-connection/form-options-fetcher.service";
 import { FormOptionsSelfmadeFetcherService } from "src/app/engine/services/form-connection/form-options-selfmade-fetcher.service";
-import { CiudadfetcherService } from "../../../services/misc/ciudadfetcher.service";
 import { MyCustomFormControl } from "../../classes/generic-form.classes";
 import { AbstractValueSetter } from "./abstract-value-setter.helper";
 
@@ -21,7 +20,6 @@ export abstract class MultiOptionsBase extends AbstractValueSetter implements On
   @Input() formcontrol:MyCustomFormControl = null!;
 
   constructor(
-    protected ciudadfetcherService:CiudadfetcherService,
     protected formOptionsFetcherService:FormOptionsFetcherService,
   ){
     super()
@@ -51,28 +49,6 @@ export abstract class MultiOptionsBase extends AbstractValueSetter implements On
       this.Fill()
   }
 
-  // protected Fill = async() => {
-
-  //   //console.log(JSON.parse(JSON.stringify(this.optionMakers)))
-  //   // console.log(this.input.key)
-  //   if(this.optionMakers instanceof Subject){
-  //     //////////////////
-  //     this.optionMakers.subscribe(async (val:any)=>{
-  //       if(val){
-  //         //console.log("Trayendo opciones con un val =",val)
-  //         await this.ciudadfetcherService.FillCities(val).then((options:any)=>{
-  //           // console.log(options)
-  //           this.setPreviousSelectValue()
-  //           this.options=options
-  //         })
-  //       }
-  //     });
-  //     //////////////////
-  //     //console.log('Es1');
-  //   }else{
-  //     this.options=this.optionMakers
-  //   }
-  // }
 
   protected Fill = async() => {
     // console.log(this.input.key)
@@ -88,11 +64,11 @@ export abstract class MultiOptionsBase extends AbstractValueSetter implements On
         // console.log('val', val);
         if(val?.key == undefined){
           //console.log("Trayendo opciones con un val =",val)
-          await this.ciudadfetcherService.FillCities(val).then((options:any)=>{
-            // console.log('MOSTRAMOS CIUDADES',options)
-            this.options=options
-            this.setPreviousSelectValue()
-          })
+          // await this.ciudadfetcherService.FillCities(val).then((options:any)=>{
+          //   // console.log('MOSTRAMOS CIUDADES',options)
+          //   this.options=options
+          //   this.setPreviousSelectValue()
+          // })
         }else if(val?.key !== undefined && val?.key == 'other'){
             // console.log('MOSTRAMOS CLIENTE');
             this.options= val?.values

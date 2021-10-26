@@ -42,10 +42,87 @@
                 }
             }
         } 
+        .dropdown-menu{
+            border: 0px;
+            border-radius: 0px;
+            margin-top: .95rem;
+            min-width: 32vw;
+            padding: 1rem 1.8rem;
+            left: -75%;
+            box-shadow: 0 14px 12px 0px rgb(0 0 0 / 4%);
+            & #accordion-navbar{
+                border-radius: 0px;
+                border:0px;
+                & .accordion-item{
+                    border:0px;
+                    & .accordion-body{
+                        padding: 0.5rem 1.2rem !important;
+                    }
+                    & .accordion-button{
+                        background-color: transparent !important;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: row-reverse;
+                        justify-content: start;
+                        border: 0px !important;
+                        color: $color-verde_1;
+                        font-weight: 600;
+                        padding: 0.7rem 0.5rem;
+                        box-shadow: none !important;
+                        &:after{
+                            content: '\f054';
+                            font-family: "Font Awesome 5 Pro";
+                            font-weight: 900;
+                            -webkit-font-smoothing: antialiased;
+                            display: inline-block;
+                            font-style: normal;
+                            font-variant: normal;
+                            text-rendering: auto;
+                            line-height: 1;
+                            margin-left: 0 !important;
+                            margin-right: 0.6rem;
+                            background-image: none;
+                            transition: ease-in-out all 0.4s;
+                        }
+                    }
+                    & .accordion-button:not(.collapsed){
+                        &:after{
+                            content: '\f078';
+                            transform: none;
+                        }
+                    }
+                }   
+            }
+        }
     }
 }
 
 .nav{
+    &-accordion{
+        flex-direction: column;
+        padding-left: 1rem;
+        .nav-item{
+            .nav-link{
+                text-transform: initial;
+                border:0px !important;
+                font-weight: 300 !important;
+                padding: 0.3rem 0.5rem;
+                position: relative;
+                &:hover,
+                &:focus,
+                &:active{
+                    &::before{
+                        content: '';
+                        width: 2px;
+                        height: 20px;
+                        position: absolute;
+                        left: -4px;
+                        background-color: $color-gris_2;
+                    }
+                }
+            }
+        }
+    }
     &-footer{
         display: flex;
         flex-direction: column;

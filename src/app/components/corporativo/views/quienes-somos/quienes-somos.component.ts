@@ -12,8 +12,10 @@ export class QuienesSomosComponent implements OnInit {
   pageTitle =  'Quiénes somos | Listos S.A. | Listos BPO';
 
   OwlCarouselPrincipalOptions:any;
+  OwlCarouselNuestrosClientesOptions:any;
 
   SlidesPrincipal:any;
+  SlidesClientes:any = null;
 
   Beneficios:any;
   Atributos:any;
@@ -39,11 +41,27 @@ export class QuienesSomosComponent implements OnInit {
       smartSpeed: 800,
       navSpeed: 800,
       navText: [ '<i class="fas fa-caret-left"></i>', '<i class="fas fa-caret-right"></i>' ],
-      responsive: {
-        0: {
-          items: 1
-        }
-      },
+      items: 1,
+      nav: true
+    }
+
+    this.OwlCarouselNuestrosClientesOptions = {
+      loop: true,
+      margin: 0,
+      stagePadding: 0,
+      mouseDrag: true,
+      touchDrag: false,
+      pullDrag: false,
+      dots: true,
+      autoWidth:true,
+      responsiveClass: true,
+      responsiveRefreshRate: 200,
+      autoHeight: true,
+      autoplayTimeout: 7000,
+      smartSpeed: 800,
+      navSpeed: 800,
+      navText: [ '<i class="fas fa-caret-left"></i>', '<i class="fas fa-caret-right"></i>' ],
+      items: 1,
       nav: true
     }
 
@@ -90,6 +108,21 @@ export class QuienesSomosComponent implements OnInit {
       {
         texto: 'Procesos apalancados en la tecnología.',
         icon: '/assets/images/iconos/atributos/atributo-7-tecnologia.svg'
+      },
+    ]
+
+    this.SlidesClientes = [
+      {
+        DESCRIPCION: 'Me encanto trabajar con esta entida por su compromiso por la sociedad colombiana, siempre en la busqueda del bien mas alto es si mismo que es el triunfo de la sociedad.',
+        IMAGEN: '/assets/images/quienes-somos/img-clientes.png',
+        NOMBRE: 'CARLOS ANDRES TORRES',
+        CARGO: 'Gerente ANDI',
+      },
+      {
+        DESCRIPCION: 'Me encanto trabajar con esta entida por su compromiso por la sociedad colombiana, siempre en la busqueda del bien mas alto es si mismo que es el triunfo de la sociedad.',
+        IMAGEN: '/assets/images/quienes-somos/img-clientes.png',
+        NOMBRE: 'CARLOS ANDRES TORRES',
+        CARGO: 'Gerente ANDI 2',
       },
     ]
 

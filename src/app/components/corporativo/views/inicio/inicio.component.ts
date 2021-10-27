@@ -49,11 +49,7 @@ export class InicioComponent implements OnInit {
       smartSpeed: 800,
       navSpeed: 800,
       navText: [ '<i class="fas fa-caret-left"></i>', '<i class="fas fa-caret-right"></i>' ],
-      responsive: {
-        0: {
-          items: 1
-        }
-      },
+      items: 1,
       nav: true
     }
 

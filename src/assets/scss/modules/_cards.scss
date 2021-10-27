@@ -52,4 +52,20 @@
             }
         }
     }
+    &-clientes_owlcarousel{
+        border: 0px;
+        border-radius: 0px;
+        position: relative;
+        background-color: transparent !important;
+        .card-body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            img{
+                max-width: 90px;
+                margin: 0 auto;
+            }
+        }
+    }
 }

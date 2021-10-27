@@ -71,16 +71,33 @@
         </div>
     </div>
     <!-- SECCION NUESTROS CLIENTES -->
-    <div class="col-12 section-quienesSomos_atributos bg-grisClaro_2">
+    <div class="col-12 section-quienesSomos_clientes bg-grisClaro_2">
         <div class="row d-flex align-items-stretch">
             <div class="col-12 py-5 col-lg-6">
-                <div class="row">
-                    <div class="col-12 text-center pt-4">
+                <div class="row justify-content-center d-flex">
+                    <div class="col-12 text-center pt-2">
                         <h2 class="text-grisOscuro_1 text-bold mb-3">Nuestros clientes dicen:</h2>
+                    </div>
+                    <div class="col-11 col-lg-10">
+                        <app-owl-carousel [customOptions]="OwlCarouselNuestrosClientesOptions" [slidesStore]="SlidesClientes" [customTemplateSlide]="OwlCarouselNuestrosClientes" class="section" *ngIf="SlidesClientes && OwlCarouselNuestrosClientesOptions"></app-owl-carousel>
+                        <ng-template let-slide="slide" #OwlCarouselNuestrosClientes>
+                            <div class="card card-clientes_owlcarousel">
+                                <div class="card-body">
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-10 pt-2 pb-4">
+                                            <img [src]="slide.IMAGEN" [alt]="slide.NOMBRE" [title]="slide.NOMBRE" class="img-fluid mb-3">
+                                            <p class="text-negro_1">{{ slide.DESCRIPCION }}</p>
+                                            <h5 class="text-md text-negro_1 text-bold">{{ slide.NOMBRE }}</h5>
+                                            <p class="text-negro_1">{{ slide.CARGO }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 ps-lg-0">
                 <img src="/assets/images/quienes-somos/banner-cobertura-nacional.png" alt="" class="img-fluid">
             </div>
         </div>

@@ -196,5 +196,28 @@
                 }
             }
         }
+        &_clientes{
+            position: relative;
+            .owl-carousel{
+                & .owl-nav{
+                    & [class*=owl-]{
+                        &.owl-prev{
+                            margin-left: -3vw !important;
+                        }
+                        &.owl-next{
+                            margin-right: -3vw !important;
+                        }
+                    }
+                }
+                & .owl-dots{
+                    bottom: 15px;
+                    & .owl-dot{
+                        span{
+                            background-color: $color-gris_3;
+                        }   
+                    }
+                }
+            }
+        }
     }
 }

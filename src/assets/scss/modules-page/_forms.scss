@@ -50,7 +50,10 @@
     .form-group{
         margin-bottom: 24px !important;
         padding-left: 5px;
-        padding-right: 15px;
+        padding-right: 5px;
+        @media #{ $m760 }{
+            padding-right: 15px;
+        }
         &.m-0{
             margin-top: 0 !important;
             margin-bottom: 0 !important;

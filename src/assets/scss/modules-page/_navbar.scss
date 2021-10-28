@@ -3,14 +3,26 @@
         box-shadow: 0px 1px 4px rgb(0,0,0,0.2);
         border-radius: 0px;
         border: 0px;
-        background-color: $color-blanco;
+        background-color: $color-verde_1;
         min-height: 90px;
+        @media #{$m1200}{
+            background-color: $color-blanco;
+        }
         & .navbar-brand{
             img{
-                max-width: 45px;
+                max-width: 60px;
                 @media #{$m1024}{
                     max-width: 56px;
                 }
+            }
+        }
+        & .navbar-toggler{   
+            border: 0px !important;
+            border-radius: 0px !important;  
+            font-size: 1.8rem;
+            box-shadow: none !important;
+            .navbar-toggler-icon{
+                background-image: url('/assets/images/menu-icon.svg');
             }
         }
         & .nav-item{
@@ -191,6 +203,15 @@
                     background-color: transparent !important;
                 }
             }
+        }
+    }
+}
+
+.offcanvas{
+    &.offcanvas-end{
+        width: 340px;
+        @media #{$m760}{
+            width: 400px;
         }
     }
 }

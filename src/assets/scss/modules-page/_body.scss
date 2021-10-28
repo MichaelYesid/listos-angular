@@ -8,7 +8,7 @@ body{
 }
 
 .container{
-    @media #{$m1280}{
+    @media #{$m1200}{
         max-width: 1200px; 
     }
     @media #{$m1440}{

@@ -1,6 +1,6 @@
 <section class="row section-inicio">
     <!-- SECCION SLIDER PRINCIPAL -->
-    <div class="col-12">
+    <div class="col-12 px-0">
         <app-owl-carousel [customOptions]="OwlCarouselPrincipalOptions" [slidesStore]="SlidesPrincipal" ></app-owl-carousel>
     </div>
     <!-- SECCION SERVICIOS -->
@@ -31,13 +31,13 @@
     <!-- SECCION CTA -->
     <div class="col-12 section-inicio_cta bg-verde_1">
         <div class="container">
-            <div class="row d-flex align-items-center justify-content-between">
+            <div class="row d-flex align-items-center justify-content-center justify-content-lg-between">
                 <div class="col-12 col-lg-6 py-5 text-center text-lg-start">
                     <h2 class="text-blanco text-bold mb-3">Entendemos que tu empresa</h2>
                     <p class="text-blanco">Es el activo mas preciado y por esta razón queremos ayudarte por medio de nuestra calidad y experiencia en el mercado del talento humano.</p>
                     <button class="btn btn-outlineBlanco text-blanco mt-2">¡Estoy interesado!</button>
                 </div>
-                <div class="col-12 col-lg-5">
+                <div class="col-12 col-sm-8 col-lg-5">
                     <img src="/assets/images/imagen-provisional-entendemos.png" alt="" class="img-fluid w-100">
                 </div>
             </div>
@@ -92,7 +92,7 @@
         </div>
     </div>
     <!-- SECCION LP NUEVAS GENERACIONES -->
-    <div class="col-12 section-inicio_clusters bg-grisClaro_2">
+    <div class="col-12 section-inicio_clusters bg-grisClaro_2 px-0">
         <img src="/assets/images/inicio/banner-nuevas-generaciones.png" alt="" class="img-fluid">
     </div>
     <!-- SECCION LP NUEVAS NOTICIAS -->
@@ -103,7 +103,7 @@
                     <h2 class="text-blanco text-bold mb-3">Noticias</h2>
                     <p class="text-blanco">Encontraras las ultimas noticias en marketing y todo lo relacionado con Listos.</p>
                 </div>
-                <div class="col-12 col-lg-10 mt-3">
+                <div class="col-12 col-sm-10 mt-3">
                     <app-owl-carousel [customOptions]="OwlCarouselNoticiasOptions" [slidesStore]="SlidesNoticias" [customTemplateSlide]="OwlCarouselNoticias" class="section"></app-owl-carousel>
                     <ng-template let-slide="slide" #OwlCarouselNoticias>
                         <div class="card card-noticias_owlcarousel">

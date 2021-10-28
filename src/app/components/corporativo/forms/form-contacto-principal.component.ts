@@ -99,7 +99,7 @@ export class FormContactoPrincipalComponent extends BaseFormContext implements O
         label: '',
         type: 'html',
         classGrid: 'col-12 col-lg-12',
-        value: '<h5 class="pt-2 text-sm text-gris_1 mb-0">Enviar el formulario, procede con la aceptación de nuestra <a href="/web/tratamiento-datos" class="btn-link" target="_blank">política de privacidad y tratamiento de datos personales,</a> según se detalla en nuestros <a href="/web/terminos-condiciones" class="btn-link" target="_blank">términos y condiciones.</a></h5>'
+        value: '<h5 class="pt-2 text-sm text-gris_1 mb-0">Enviar el formulario, procede con la aceptación de nuestra <a href="https://www.listos.com.co/ListosWeb/files/proteDatos/MA-MEJ-02_PROTECCION_DE_DATOS_PERSONALES_LISTOS.pdf" class="btn-link" target="_blank">política de privacidad y tratamiento de datos personales,</a> según se detalla en nuestros <a href="https://www.listos.com.co/ListosWeb/files/proteDatos/MA-MEJ-02_PROTECCION_DE_DATOS_PERSONALES_LISTOS.pdf" class="btn-link" target="_blank">términos y condiciones.</a></h5>'
       })
     ]
   }

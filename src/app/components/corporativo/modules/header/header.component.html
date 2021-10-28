@@ -1,14 +1,15 @@
 <nav class="navbar navbar-light navbar-page fixed-top pt-0">
-	<div class="container-fluid p-0">
+	<div class="container-fluid p-0 d-none d-xl-block">
 		<div class="col-12 section-topbar bg-verde_1 text-center py-2 p-lg-3">
 			<h5 class="text-blanco text-lightFont mb-0">Aquí algún aviso importante, como el COVID 19, por ejemplo. <a href="#" class="text-blanco text-semiBold">SABER MÁS</a></h5>
 		</div>
 	</div>
 	<div class="container">
-		<div class="row d-flex align-items-stretch justify-content-between w-100 pt-2">
+		<div class="row d-flex align-items-stretch justify-content-between w-100 mx-0 pt-2">
 			<div class="col-4 col-xl-1 col-xxl-1">
-				<a class="navbar-brand" href="#">
-					<img src="../../../../assets/images/logo-listos.png" alt="">
+				<a class="navbar-brand d-block" href="#">
+					<img src="../../../../assets/images/logo-listos.png" alt="" class="d-none d-xl-block">
+					<img src="../../../../assets/images/logo-listos-blanco.png" alt="" class="d-block d-xl-none">
 				</a>
 			</div>
 			<div class="col d-none d-xl-flex justify-content-end align-items-center">
@@ -116,7 +117,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="col-3 d-flex d-xl-none">
+			<div class="col-3 d-flex d-xl-none justify-content-end">
 				<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -126,8 +127,8 @@
 		<!-- RESPONSIVE SIDEBAR -->
 		<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 			<div class="offcanvas-header">
-			<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+				<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 			</div>
 			<div class="offcanvas-body">
 			<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">

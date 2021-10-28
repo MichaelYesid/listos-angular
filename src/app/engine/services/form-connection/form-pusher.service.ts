@@ -11,9 +11,9 @@ export class FormPusherService {
     private httpRequestService: WithLoadingService,
   ) {}
 
-  async SubmitToBackEnd( pushContext: PushContext,data:any){
+  async SubmitToBackEnd( pushContext: PushContext,data:any, args:any=undefined){
     let apiURL = pushContext.apiURL;
-    return await this.httpRequestService.POST(apiURL,data,undefined,undefined,undefined,undefined,undefined,undefined);
+    return await this.httpRequestService.POST(apiURL,data,undefined,undefined,undefined,undefined,undefined,undefined, args);
   }
 
 }

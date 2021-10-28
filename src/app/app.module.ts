@@ -7,6 +7,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgbDropdownModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AccordionModule } from 'primeng/accordion';
+import { DialogModule } from 'primeng/dialog'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -61,10 +62,11 @@ import { FormFetcherService } from './engine/services/form-connection/form-fetch
 import { FormPusherService } from './engine/services/form-connection/form-pusher.service';
 import { FormOptionsFetcherService } from './engine/services/form-connection/form-options-fetcher.service';
 import { WithLoadingService } from './engine/services/custom-connections/with-loading.service';
-import { LoadingModalService } from './engine/services/custom-connections/loading-modal.service';
+import { LoadingModalService, SpinnerOverlayComponent } from './engine/services/custom-connections/loading-modal.service';
 import { AlertService } from './engine/services/alerts/alerts.service';
 import { HttpConnectionService } from './engine/services/http/http-connection.service';
 import { HttpRequestService } from './engine/services/http/http-request.service';
+import { AlertComponent } from './engine/modules/alert/alert.component';
 
 //
 
@@ -78,6 +80,8 @@ import { HttpRequestService } from './engine/services/http/http-request.service'
     FooterComponent,
     OwlCarouselComponent,
     LoadingSpinnerComponent,
+    SpinnerOverlayComponent,
+    AlertComponent,
     //
     TextComponent,
     PasswordComponent,
@@ -119,6 +123,7 @@ import { HttpRequestService } from './engine/services/http/http-request.service'
     //
     CarouselModule,
     AccordionModule,
+    DialogModule,
     NgbModule,
     NgbDropdownModule,
     FormsModule,

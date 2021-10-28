@@ -71,7 +71,7 @@ export class LoadingModalService {
 //</button>
 export class SpinnerOverlayComponent implements OnInit, OnDestroy{
   
-  displayModal: boolean = true;
+  displayModal: boolean = false;
   displayNextPage: any = false;
   hasContent:boolean=false;
   

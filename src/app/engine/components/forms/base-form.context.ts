@@ -138,7 +138,7 @@ export abstract class BaseFormContext extends BaseFormTemplate {
           }, 800);  
         }
 
-        if( response.status !== undefined && response.status == 'success'){
+        if( ( response.status !== undefined && response.status == 'success') || response == true ){
           
           if(this.nextRoute==="no"){
             // No hacer nada

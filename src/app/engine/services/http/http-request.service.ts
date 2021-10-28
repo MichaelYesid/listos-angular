@@ -25,6 +25,7 @@ export class HttpRequestService {
     ErrFoo?: any,
     ProcessingFoo?: any,
     FinallyFoo?: any,
+    args?:any
   ) {
     const typeofRequest = 'POST';
 
@@ -37,7 +38,8 @@ export class HttpRequestService {
       tryInterval_ms,
       ErrFoo,
       ProcessingFoo,
-      FinallyFoo
+      FinallyFoo,
+      args,
     );
   }
 
@@ -55,7 +57,8 @@ export class HttpRequestService {
     tryInterval_ms?: number,
     ErrFoo?: any,
     ProcessingFoo?: any,
-    FinallyFoo?: any
+    FinallyFoo?: any,
+    args?: any,
   ) {
 
     console.log(apiURL,data); 
@@ -65,8 +68,7 @@ export class HttpRequestService {
     try {
 
       if(typeof ErrFoo !== 'undefined')
-        ProcessingFoo('MOSTRAMOS FINAL');
-
+        ProcessingFoo(args);
       // let form_data = new FormData();
       
       // for ( var key in data ) { 
@@ -85,11 +87,11 @@ export class HttpRequestService {
         tryInterval_ms || this.default_tryInterval_ms,
       )
       
-      // console.log(responseReq);
-      if(responseReq.status && responseReq.status == 'success'){
+      // console.log('MOSTRAMOS RESPONSE DESDE HTTPREQUEST: ',responseReq);
+      if(responseReq.status && responseReq.status == 'success' || responseReq == true){
         this.alertService.clear();
         if( !responseReq.message){
-          this.alertService.success('Información guardada y/o actualizada');
+          this.alertService.success('Información guardada exitosamente.');
         }else{
           this.alertService.success(responseReq.message);
         }
@@ -103,7 +105,7 @@ export class HttpRequestService {
     } finally {
       
       if(typeof FinallyFoo !== 'undefined')
-        FinallyFoo('MOSTRAMOS FINAL');
+        FinallyFoo(args);
         
     }
 

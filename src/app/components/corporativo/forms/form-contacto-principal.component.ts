@@ -29,7 +29,21 @@ export class FormContactoPrincipalComponent extends BaseFormContext implements O
   // VARIABLES OPTIONS
 
   protected PushDataProcessor = (data: any) => {
-    return data
+    
+    let motivoObj = this.MotivosContacto.filter( (item:any)=> item.VP_CODIGO == data['MOTIVO'] );
+    let cuerpoMensaje = `Nombre: ${data['NOMBRE']}, Teléfono: ${data['TELEFONO']}, Correo electrónico: ${data['CORREO_ELECTRONICO']}`;
+
+    let transformData = {
+      "correo": motivoObj[0].CORREO,
+      "link": null,
+      "asunto": motivoObj[0].TEXTO + ' - Formulario de Contacto Listos',
+      "titulo": 'Hola, ',
+      "cuerpoMensaje": cuerpoMensaje,
+      "copia": data['CORREO_ELECTRONICO'],
+      "adjunto": null
+    }
+    return transformData
+
   };
 
   protected inputs:any[] = []

@@ -88,7 +88,7 @@ export class HttpRequestService {
       )
       
       // console.log('MOSTRAMOS RESPONSE DESDE HTTPREQUEST: ',responseReq);
-      if(responseReq.status && responseReq.status == 'success' || responseReq == true){
+      if( ( responseReq.status && responseReq.status == 'success' ) || responseReq == true){
         this.alertService.clear();
         if( !responseReq.message){
           this.alertService.success('Información guardada exitosamente.');

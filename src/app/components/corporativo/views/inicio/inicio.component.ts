@@ -17,6 +17,7 @@ export class InicioComponent implements OnInit {
   OwlCarouselServiciosOptions:any;
   OwlCarouselNoticiasOptions:any;
   OwlCarouselAliadosOptions:any;
+  OwlCarouselClustersOptions:any;
 
   SlidesPrincipal:any
   SlidesServicios:any
@@ -38,12 +39,11 @@ export class InicioComponent implements OnInit {
       margin: 0,
       stagePadding: 0,
       mouseDrag: true,
-      touchDrag: false,
+      touchDrag: true,
       pullDrag: false,
       dots: true,
       autoWidth:true,
       responsiveClass: true,
-      responsiveRefreshRate: 200,
       autoHeight: true,
       autoplayTimeout: 7000,
       smartSpeed: 800,
@@ -58,29 +58,51 @@ export class InicioComponent implements OnInit {
       margin: 50,
       stagePadding: 0,
       mouseDrag: true,
-      touchDrag: false,
+      touchDrag: true,
       pullDrag: false,
       dots: false,
       autoWidth:true,
-      responsiveClass: true,
-      responsiveRefreshRate: 200,
-      responsiveBaseElement: 'window',
       autoHeight: true,
       smartSpeed: 800,
       navSpeed: 800,
       navText: [ '<i class="fas fa-caret-left"></i>', '<i class="fas fa-caret-right"></i>' ],
       responsive: {
         0: {
-          items: 1
+          items: 1,
         },
-        768: {
+        414: {
           items: 2
         },
         1024: {
           items: 4
         }
       },
-      nav: true
+      nav: true,
+    }
+
+    this.OwlCarouselClustersOptions = {
+      loop: true,
+      margin: 20,
+      stagePadding: 0,
+      mouseDrag: true,
+      touchDrag: true,
+      pullDrag: false,
+      dots: false,
+      autoWidth:true,
+      responsiveClass: true,
+      responsiveRefreshRate: 1,
+      autoHeight: true,
+      smartSpeed: 800,
+      navSpeed: 800,
+      navText: [ '', '' ],
+      responsive: {
+        0: {
+          items: 2,
+        },
+        768: {
+          items: 3
+        }
+      }
     }
 
     this.OwlCarouselNoticiasOptions = {
@@ -88,29 +110,28 @@ export class InicioComponent implements OnInit {
       margin: 30,
       stagePadding: 0,
       mouseDrag: true,
-      touchDrag: false,
+      touchDrag: true,
       pullDrag: false,
       dots: false,
       autoWidth:true,
       responsiveClass: true,
-      responsiveRefreshRate: 200,
-      responsiveBaseElement: 'window',
+      responsiveRefreshRate: 1,
       autoHeight: true,
       smartSpeed: 800,
       navSpeed: 800,
+      nav: false,
       navText: [ '', '' ],
       responsive: {
         0: {
           items: 1,
-          nav: false,
+          dots: true
         },
-        768: {
+        500: {
           items: 2,
-          nav: false,
+          dots: true
         },
         1024: {
           items: 3,
-          nav: false,
         }
       }
     }
@@ -120,12 +141,12 @@ export class InicioComponent implements OnInit {
       margin: 20,
       stagePadding: 0,
       mouseDrag: true,
-      touchDrag: false,
+      touchDrag: true,
       pullDrag: false,
       dots: false,
       autoWidth:true,
       responsiveClass: true,
-      responsiveRefreshRate: 200,
+      responsiveRefreshRate: 1,
       responsiveBaseElement: 'window',
       autoHeight: true,
       smartSpeed: 800,
@@ -136,8 +157,8 @@ export class InicioComponent implements OnInit {
           items: 2,
           nav: false,
         },
-        768: {
-          items: 4,
+        640: {
+          items: 3,
           nav: false,
         },
         1024: {
@@ -213,9 +234,7 @@ export class InicioComponent implements OnInit {
   }
   
   ngOnInit(): void {
-
     this.titleService.setTitle(this.pageTitle);
-
     this.metaTagService.addTags([
       { name: 'keywords', content: 'Portal oficial de Listos BPO' },
       { name: 'robots', content: 'index, follow' },
@@ -223,7 +242,6 @@ export class InicioComponent implements OnInit {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { charset: 'UTF-8' }
     ]);
-
     this.getValuesCategorias();
   }
   

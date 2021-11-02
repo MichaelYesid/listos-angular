@@ -1,6 +1,6 @@
 <section class="row section-quienesSomos">
     <!-- SECCION SLIDER PRINCIPAL -->
-    <div class="col-12 px-0">
+    <div class="col-12 px-0 section-quienesSomos_sliderQuienesomos">
         <app-owl-carousel [customOptions]="OwlCarouselPrincipalOptions" [slidesStore]="SlidesPrincipal" ></app-owl-carousel>
     </div>
     <!-- SECCION QUIENES SOMOS -->
@@ -17,7 +17,7 @@
                         Unos pocas aplicaciones o beneficios de la marca y listo.</p>
                 </div>
                 <div class="col-12 col-lg-9">
-                    <div class="row">
+                    <div class="row d-none d-lg-flex">
                         <div class="col-12 col-lg-4 py-3" *ngFor="let item of Beneficios">
                             <div class="w-100 d-flex flex-column justify-content-center beneficios-item pe-4">
                                 <img [src]="item.icon" alt="" class="">
@@ -25,17 +25,34 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row d-flex justify-content-center d-lg-none">
+                        <div class="col-10 col-sm-12 pb-5">
+                            <app-owl-carousel [customOptions]="OwlCarouselBeneficiosOptions" [slidesStore]="Beneficios" [customTemplateSlide]="OwlCarouselBeneficios" class="section"></app-owl-carousel>
+                            <ng-template let-slide="slide" #OwlCarouselBeneficios>
+                                <div class="card card-beneficios_owlcarousel">
+                                    <div class="card-body">
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="col-12">
+                                                <img [src]="slide.icon" alt="" class="mb-3">
+                                                <h4 class="text-gris_2 text-mdx text-semiBold mt-2 mb-0">{{slide.title}}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- SECCION PROPUESTA VALOR-->
-    <div class="col-12 py-4 pb-lg-0 pt-lg-5 section-quienesSomos_propuestaValor bg-grisClaro_1">
-        <div class="row d-flex justify-content-around align-items-stretch">
-            <div class="col-12 col-lg-4 px-5">
+    <div class="col-12 pt-4 pb-0 pt-lg-5 section-quienesSomos_propuestaValor bg-grisClaro_1">
+        <div class="row d-flex justify-content-center justify-content-lg-around align-items-stretch">
+            <div class="col-12 col-lg-4 px-5 order-2 order-lg-1 d-flex align-items-end justify-content-center">
                 <img src="/assets/images/quienes-somos/img-propuesta-valor.png" alt="" class="img-fluid">
             </div>
-            <div class="col-12 col-lg-6 offset-lg-1 py-4 me-auto">
+            <div class="col-11 col-lg-6 offset-lg-1 py-4 me-lg-auto order-1 order-lg-2"> 
                 <h2 class="text-verde_1 text-bold mb-4">Nuestra propuesta de valor</h2>  
                 <p>Somos una extensión de RRHH de nuestros clientes, trabajamos de manera colaborativa y agil conectandonos genuinamente con sus necesidades, brindando una experiencia unica para nuestros trabajadores.​</p>
                 <p>Con el uso de tecnologías, analitica de datos  y la marca empleadora, promovemos la inclusión laboral y la atracción del mejor talento.​</p>
@@ -58,7 +75,7 @@
                     <p>Duerante 45 años de experiencia hemos forjado una solida estructura de trabajo que nos permite hacerle frente a todas las exigencias del mercado laboral desarrollando estos atributos.</p>
                 </div>
                 <div class="col-12 col-lg-10">
-                    <div class="row d-flex justify-content-between">
+                    <div class="row d-none d-lg-flex justify-content-between">
                         <div class="col-12 col-lg-5 py-3" *ngFor="let item of Atributos">
                             <div class="w-100 d-flex align-items-center atributos-item pe-4">
                                 <img [src]="item.icon" alt="" class="">
@@ -66,17 +83,34 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row d-flex justify-content-center d-lg-none">
+                        <div class="col-10 col-sm-12">
+                            <app-owl-carousel [customOptions]="OwlCarouselAtributosOptions" [slidesStore]="Atributos" [customTemplateSlide]="OwlCarouselAtributos" class="section"></app-owl-carousel>
+                            <ng-template let-slide="slide" #OwlCarouselAtributos>
+                                <div class="card card-atributos_owlcarousel">
+                                    <div class="card-body">
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="col-12">
+                                                <img [src]="slide.icon" alt="" class="mb-3">
+                                                <p class="text-gris_2 mb-0">{{ slide.texto }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- SECCION NUESTROS CLIENTES -->
-    <div class="col-12 section-quienesSomos_clientes bg-grisClaro_2">
+    <div class="col-12 section-quienesSomos_clientes">
         <div class="row d-flex align-items-stretch">
-            <div class="col-12 py-5 col-lg-6">
+            <div class="col-12 py-5 col-lg-6 order-2 order-lg-1">
                 <div class="row justify-content-center d-flex">
                     <div class="col-12 text-center pt-2">
-                        <h2 class="text-grisOscuro_1 text-bold mb-3">Nuestros clientes dicen:</h2>
+                        <h2 class="text-verde_1 text-bold mb-3">Nuestros clientes dicen:</h2>
                     </div>
                     <div class="col-11 col-lg-10">
                         <app-owl-carousel [customOptions]="OwlCarouselNuestrosClientesOptions" [slidesStore]="SlidesClientes" [customTemplateSlide]="OwlCarouselNuestrosClientes" class="section" *ngIf="SlidesClientes && OwlCarouselNuestrosClientesOptions"></app-owl-carousel>
@@ -97,7 +131,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-6 px-lg-0">
+            <div class="col-12 col-lg-6 px-0 order-1 order-lg-2">
                 <img src="/assets/images/quienes-somos/banner-cobertura-nacional.png" alt="" class="img-fluid">
             </div>
         </div>

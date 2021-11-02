@@ -17,6 +17,7 @@ import { HeaderComponent } from './components/corporativo/modules/header/header.
 import { FooterComponent } from './components/corporativo/modules/footer/footer.component';
 import { OwlCarouselComponent } from './components/corporativo/modules/owl-carousel/owl-carousel.component';
 import { LoadingSpinnerComponent } from './engine/modules/loading/loading-spinner/loading-spinner.component';
+import { MenuPrincipalComponent } from './components/corporativo/modules/menu-principal/menu-principal.component';
 
 //FORMS INPUTS COMPONENTS
 import { TextComponent } from './engine/components/forms/structure-input/text.component';
@@ -78,6 +79,7 @@ import { AlertComponent } from './engine/modules/alert/alert.component';
     CorporativoComponent,
     HeaderComponent,
     FooterComponent,
+    MenuPrincipalComponent,
     OwlCarouselComponent,
     LoadingSpinnerComponent,
     SpinnerOverlayComponent,
@@ -113,7 +115,7 @@ import { AlertComponent } from './engine/modules/alert/alert.component';
     FormProcessorComponent,
     StructureFormRowComponent,
     GenericFormComponent,
-    FormContactoPrincipalComponent
+    FormContactoPrincipalComponent,
   ],
   imports: [
     BrowserModule,

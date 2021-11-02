@@ -1,6 +1,6 @@
 <section class="row section-inicio">
     <!-- SECCION SLIDER PRINCIPAL -->
-    <div class="col-12 px-0">
+    <div class="col-12 px-0 section-inicio_sliderPrincipal">
         <app-owl-carousel [customOptions]="OwlCarouselPrincipalOptions" [slidesStore]="SlidesPrincipal" ></app-owl-carousel>
     </div>
     <!-- SECCION SERVICIOS -->
@@ -9,10 +9,10 @@
             <div class="col-12 text-center">
                 <h2 class="text-verde_1 text-bold mb-3">Servicios</h2>
             </div>
-            <div class="col-12 col-lg-9 col-xl-8 col-xxl-7 text-center mb-4">
+            <div class="col-12 col-sm-10 col-lg-9 col-xl-8 col-xxl-7 text-center mb-4">
                 <p>Aquí seria bueno hablar de forma somera acerca de estos servicios, ya que al estar en el index debe dar una respuesta inmediata de lo que hace y en pocas palabras, para no retrazar la asimilación de la informacion al usuario.</p>
             </div>
-            <div class="col-10 col-sm-8 col-lg-10">
+            <div class="col-10 col-sm-10">
                 <app-owl-carousel [customOptions]="OwlCarouselServiciosOptions" [slidesStore]="SlidesServicios" [customTemplateSlide]="OwlCarouselServicios" class="section"></app-owl-carousel>
                 <ng-template let-slide="slide" #OwlCarouselServicios>
                     <div class="card card-servicios_owlcarousel">
@@ -50,19 +50,19 @@
                 <div class="col-12 text-center">
                     <h2 class="text-verde_1 text-bold mb-5">Nuestras métricas</h2>
                 </div>
-                <div class="col-12 col-lg-3 text-center mb-5 mb-lg-0">
+                <div class="col-6 col-lg-3 text-center mb-5 mb-lg-0">
                     <h2 class="text-jumbo text-verde_1 text-bold text-poppins">350</h2>
                     <h5 class="text-mdx">Clientes naturales</h5>
                 </div>
-                <div class="col-12 col-lg-3 text-center mb-5 mb-lg-0">
+                <div class="col-6 col-lg-3 text-center mb-5 mb-lg-0">
                     <h2 class="text-jumbo text-verde_1 text-bold text-poppins">4500</h2>
                     <h5 class="text-mdx">Trabajadores en misión</h5>
                 </div>
-                <div class="col-12 col-lg-3 text-center mb-5 mb-lg-0">
+                <div class="col-6 col-lg-3 text-center mb-5 mb-lg-0">
                     <h2 class="text-jumbo text-verde_1 text-bold text-poppins">2500</h2>
                     <h5 class="text-mdx">Vacantes activas</h5>
                 </div>
-                <div class="col-12 col-lg-3 text-center mb-5 mb-lg-0">
+                <div class="col-6 col-lg-3 text-center mb-5 mb-lg-0">
                     <h2 class="text-jumbo text-verde_1 text-bold text-poppins">15.000</h2>
                     <h5 class="text-mdx">Banco de talento</h5>
                 </div>
@@ -78,8 +78,8 @@
                     <h2 class="text-verde_1 text-bold mb-2">Nuestros clústers</h2>
                     <p>Estamos en diversos ambitos de la industria fomentando el empleo y la inclusión.</p>
                 </div>
-                <div class="col-10 col-lg-12 mt-3 mb-5">
-                    <div class="row">
+                <div class="col-12 col-lg-12 mt-3 mb-5">
+                    <div class="row d-none d-lg-flex">
                         <div class="col-12 col-lg-3 py-3" *ngFor="let item of Clusters">
                             <div class="w-100 d-flex align-items-center cluster-item pe-4">
                                 <img [src]="item.icon" alt="" class="">
@@ -87,6 +87,23 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row d-flex d-lg-none">
+                        <div class="col-12">
+                            <app-owl-carousel [customOptions]="OwlCarouselClustersOptions" [slidesStore]="Clusters" [customTemplateSlide]="OwlCarouselClusters" class="section"></app-owl-carousel>
+                            <ng-template let-slide="slide" #OwlCarouselClusters>
+                                <div class="card card-clusters_owlcarousel">
+                                    <div class="card-body">
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="col-12">
+                                                <img [src]="slide.icon" alt="" class="mb-3">
+                                                <h4 class="text-gris_2 text-mdx mb-0">{{slide.title}}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </div>
+                    </div>  
                 </div>
             </div>
         </div>
@@ -103,7 +120,7 @@
                     <h2 class="text-blanco text-bold mb-3">Noticias</h2>
                     <p class="text-blanco">Encontraras las ultimas noticias en marketing y todo lo relacionado con Listos.</p>
                 </div>
-                <div class="col-12 col-sm-10 mt-3">
+                <div class="col-12 col-sm-11 mt-3 pb-5 pb-lg-0">
                     <app-owl-carousel [customOptions]="OwlCarouselNoticiasOptions" [slidesStore]="SlidesNoticias" [customTemplateSlide]="OwlCarouselNoticias" class="section"></app-owl-carousel>
                     <ng-template let-slide="slide" #OwlCarouselNoticias>
                         <div class="card card-noticias_owlcarousel">
@@ -160,7 +177,7 @@
                     <h2 class="text-verde_1 text-bold mb-3">Contáctanos</h2>
                     <p>Escríbenos, queremos saber como podemos ayudarte.</p>
                 </div>
-                <div class="col-12 col-md-8 col-lg-6 mt-3">
+                <div class="col-12 col-md-8 col-xl-6 mt-3">
                     <app-form-contacto-principal [MotivosContacto]="MotivosContacto" (responseHandler)="getResponseForm($event)"></app-form-contacto-principal>
                 </div>
             </div>

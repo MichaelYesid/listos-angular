@@ -64,7 +64,10 @@
         font-size: 2.5rem;
     }
     &-jumbo{
-        font-size: 4rem;
+        font-size: 2.5rem;
+        @media #{$m760}{
+            font-size: 4rem;
+        }
     }
     //FONT WEIGHT
     &-extraLight{

@@ -12,6 +12,8 @@ export class QuienesSomosComponent implements OnInit {
   pageTitle =  'Quiénes somos | Listos S.A. | Listos BPO';
 
   OwlCarouselPrincipalOptions:any;
+  OwlCarouselBeneficiosOptions:any;
+  OwlCarouselAtributosOptions:any;
   OwlCarouselNuestrosClientesOptions:any;
 
   SlidesPrincipal:any;
@@ -43,6 +45,58 @@ export class QuienesSomosComponent implements OnInit {
       navText: [ '<i class="fas fa-caret-left"></i>', '<i class="fas fa-caret-right"></i>' ],
       items: 1,
       nav: true
+    }
+
+    this.OwlCarouselBeneficiosOptions = {
+      loop: true,
+      margin: 20,
+      stagePadding: 0,
+      mouseDrag: true,
+      touchDrag: true,
+      pullDrag: false,
+      dots: true,
+      autoWidth:true,
+      responsiveClass: true,
+      responsiveRefreshRate: 1,
+      autoHeight: true,
+      smartSpeed: 800,
+      navSpeed: 800,
+      nav: true,
+      navText: [ '<i class="fas fa-caret-left"></i>', '<i class="fas fa-caret-right"></i>' ],
+      responsive: {
+        0: {
+          items: 1,
+        },
+        660: {
+          items: 3
+        }
+      }
+    }
+
+    this.OwlCarouselAtributosOptions = {
+      loop: true,
+      margin: 20,
+      stagePadding: 0,
+      mouseDrag: true,
+      touchDrag: true,
+      pullDrag: false,
+      dots: false,
+      autoWidth:true,
+      responsiveClass: true,
+      responsiveRefreshRate: 1,
+      autoHeight: true,
+      smartSpeed: 800,
+      navSpeed: 800,
+      nav: true,
+      navText: [ '<i class="fas fa-caret-left"></i>', '<i class="fas fa-caret-right"></i>' ],
+      responsive: {
+        0: {
+          items: 1,
+        },
+        640: {
+          items: 2
+        }
+      }
     }
 
     this.OwlCarouselNuestrosClientesOptions = {
@@ -129,6 +183,14 @@ export class QuienesSomosComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle(this.pageTitle);
+    this.metaTagService.addTags([
+      { name: 'keywords', content: 'Portal oficial de Listos BPO' },
+      { name: 'robots', content: 'index, follow' },
+      { name: 'author', content: 'Listos SA.' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { charset: 'UTF-8' }
+    ]);
     this.getValuesCategorias();
   }
   
@@ -136,7 +198,6 @@ export class QuienesSomosComponent implements OnInit {
     let data = { 'EMP_CODIGO' : 1 }
     let responseDataCategoriasRequerimientos = await this.fetchPreviousData.FetchPreviousData(new ConsultarDatosPaginaContext, data ).then( (data:any) =>{
       this.SlidesPrincipal = data.banner;
-      // console.log(data);
     });
   }
 

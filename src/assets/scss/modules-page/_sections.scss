@@ -311,4 +311,37 @@
             }
         }
     }
+    //
+    &-detalle-noticias{
+        &_title{
+            h2{
+                position: relative;
+                &::before{
+                    content: '';
+                    background-color: $color-grisClaro_1;
+                    position: absolute;
+                    width: 100px;
+                    height: 2px;
+                    left: 50%;
+                    bottom: -1rem;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+        &_content{
+            img{
+                float: none;
+                max-width: 320px;
+                width: 100%;
+                margin: 0 0 2rem 0;
+                @media #{$m760}{
+                    float: right;
+                    margin: 0 0 2rem 2rem;
+                }
+                @media #{$m1024}{
+                    max-width: 442px;
+                }
+            }
+        }
+    }
 }

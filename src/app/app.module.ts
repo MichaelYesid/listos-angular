@@ -57,6 +57,7 @@ import { FormContactoPrincipalComponent } from './components/corporativo/forms/f
 import { CorporativoComponent } from './components/corporativo/corporativo.component';
 import { InicioComponent } from './components/corporativo/views/inicio/inicio.component';
 import { QuienesSomosComponent } from './components/corporativo/views/quienes-somos/quienes-somos.component';
+import { DetalleNoticiasComponent } from './components/corporativo/views/noticias/detalle-noticias/detalle-noticias.component';
 
 // SERVICES
 import { FormFetcherService } from './engine/services/form-connection/form-fetcher.service';
@@ -76,6 +77,7 @@ import { AlertComponent } from './engine/modules/alert/alert.component';
     AppComponent,
     InicioComponent,
     QuienesSomosComponent,
+    DetalleNoticiasComponent,
     CorporativoComponent,
     HeaderComponent,
     FooterComponent,

@@ -1,6 +1,7 @@
-<h2 class="text-lgx text-gris_1 col-12 text-left mt-3 mb-5 pt-2 pb-3 border-bottom" *ngIf="title">{{title}}</h2>
+<h2 class="text-lgx text-gris_1 col-12 text-start mt-3 mb-5 pt-2 pb-3 border-bottom" *ngIf="title">{{title}}</h2>
 <div class="col-12">
   <form [formGroup]="conectorFormulario.form" (ngSubmit)="onSubmit()" class="form" novalidate>
+    
     <div class="form-row">
       <div *ngFor="let conectorInputForm of conectorFormulario.conectoresInputForm" [class]="conectorInputForm.input.classGrid" [formGroup]="conectorFormulario.form" class="form-group" [ngClass]="(conectorInputForm.input.visible)?'':'m-0'">
           <app-structure-form-row [formcontrol]="conectorInputForm.control"
@@ -14,41 +15,24 @@
               [oldValue]="oldValues?oldValues[conectorInputForm.input.key]:''"></app-structure-form-row>
       </div>
     </div>
+
     <div *ngIf="outputError" class="form-row">
       <div class="col-12 ">
-        <span class="text-danger "><i class="bi bi-x-circle-fill mr-2"></i>{{outputError}}</span>
+        <span class="text-danger "><i class="bi bi-x-circle-fill me-2"></i>{{outputError}}</span>
       </div>
     </div>
+    
     <!-- INPUT NG FOR -->
     <div *ngIf="!isUpdating && !onlyRead" class="form-row">
       <div class="form-group col-12 pt-3">
-        <div *ngIf="customButtons" class="d-inline-block">
-          <span  *ngFor="let customButton of customButtons" (click)="customButton.action($event,customButton)" [class]="customButton.class">{{customButton.text}}</span>
-          <button *ngIf="hasSubmitButton" type="submit" class="d-inline btn-custom btn-saveForm px-5" >{{label_submit}}</button>
-        </div>
-        <div *ngIf="!customButtons" class="d-inline-block">
-          <button *ngIf="hasSubmitButton" type="submit" class="d-inline btn-custom btn-saveForm px-5" >{{label_submit}}</button>
+        <div *ngIf="!customButtons" class="d-grid gap-2">
+          <button *ngIf="hasSubmitButton" type="submit" class="btn d-inline btn-success btn-submit px-5" >{{label_submit}}</button>
         </div>
       </div>
     </div>
-    <div *ngIf="isUpdating && !onlyRead" class="form-row">
-      <div class="form-group col-12 d-flex align-items-center justify-content-start pt-3">
-        <div *ngIf="customButtons"  class="d-inline-block">
-          <button *ngIf="hasSubmitButton" type="submit" class="d-inline btn-custom btn-saveForm px-5 mr-lg-4" >{{label_submit}}</button>
-          <button (click)="cancelEdit()" class="d-inline btn-custom btn-cancelForm px-5 mr-lg-4">Cancelar</button>
-          <span  *ngFor="let customButton of customButtons" (click)="customButton.action($event,customButton)" [class]="customButton.class">{{customButton.text}}</span>
-        </div>
-        <div *ngIf="!customButtons" class="d-inline-block">
-          <button *ngIf="hasSubmitButton" type="submit" class="d-inline btn-custom btn-saveForm px-5 mr-lg-4" >{{label_submit}}</button>
-          <button (click)="cancelEdit()" class="d-inline btn-custom btn-cancelForm px-5 mr-lg-4">Cancelar</button>
-        </div>
-        
-      </div>
-    </div>
+    <!-- ///////// -->
+
   </form>
 </div>
-<!-- <div *ngIf="payLoad" class="form-row">
-  <strong>Saved the following values</strong><br>{{payLoad | json}}
-</div>     -->
 
 

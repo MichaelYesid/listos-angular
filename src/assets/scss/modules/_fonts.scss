@@ -5,6 +5,12 @@
     &-gris_1{
         color: $color-gris_1;
     }
+    &-gris_2{
+        color: $color-gris_2;
+    }
+    &-grisOscuro_1{
+        color: $color-grisOscuro_1;
+    }
     &-negro_1{
         color: $color-negro_1;
     }
@@ -57,6 +63,12 @@
     &-xxl{
         font-size: 2.5rem;
     }
+    &-jumbo{
+        font-size: 2.5rem;
+        @media #{$m760}{
+            font-size: 4rem;
+        }
+    }
     //FONT WEIGHT
     &-extraLight{
         font-weight: 200;
@@ -78,6 +90,10 @@
     }
     &-black{
         font-weight: 900;
+    }
+    // FAMILY
+    &-poppins{
+       font-family: $poppins-font;
     }
     //LINES HEIGHT
     &-lineHeight{

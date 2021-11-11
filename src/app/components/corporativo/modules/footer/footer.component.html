@@ -1,26 +1,26 @@
 <footer class="footer-page bg-grisClaro_1">
     <div class="container py-4">
         <div class="row d-flex justify-content-center">
-            <div class="col-12 col-xxl-9 py-5">
-                <div class="row">
-                    <div class="col-12 col-lg-4 section-footer_menu ps-4">
+            <div class="col-12 col-xxl-9 py-4 py-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-4 d-none d-lg-block section-footer_menu ps-4">
                         <h5 class="text-verde_1 text-bold text-md">EMPRESA</h5>
                         <ul class="nav nav-footer">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">¿Quiénes somos?</a>
+                                <a [routerLink]="[ '/web/quienes-somos']" class="nav-link">¿Quiénes somos?</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Talento</a>
+                                <a href="https://vumtalent.vum.com.co/candidato/listos/inicio" target="_blank" class="nav-link">Talento</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">VUM Office</a>
+                                <a href="https://vumoffice.vum.com.co/login" target="_blank" class="nav-link">VUM Office</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Contáctanos</a>
+                                <a  href="/web/inicio#section-contact" class="nav-link">Contáctanos</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="col-12 col-lg-5 section-footer_menu ps-4">
+                    <div class="col-12 col-lg-5 d-none d-lg-block section-footer_menu ps-4">
                         <h5 class="text-verde_1 text-bold text-md">SEDES NACIONALES</h5>
                         <ul class="nav nav-footer">
                             <li class="nav-item">
@@ -38,8 +38,8 @@
                         </ul>
                     </div>
                     <div class="col-12 col-lg-3 ps-4">
-                        <h5 class="text-verde_1 text-bold text-md">SIGUENOS EN REDES</h5>
-                        <ul class="nav nav-footerRedesSociales">
+                        <h5 class="text-verde_1 text-bold text-md text-center text-lg-start">SÍGUENOS EN REDES</h5>
+                        <ul class="nav nav-footerRedesSociales justify-content-center justify-content-lg-start">
                             <li class="nav-item">
                                 <a href="" class="nav-link">
                                     <i class="fab fa-facebook-f"></i>
@@ -65,17 +65,17 @@
         <div class="row">
             <div class="col-12">
                 <ul class="nav nav-footerBottom">
-                    <li class="nav-item">
+                    <li class="nav-item d-none d-lg-flex">
                         <a href="" class="nav-link">Información Legal</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item d-none d-lg-flex">
                         <a href="" class="nav-link">Acerca de LISTOS SAS</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Contáctanos PQRS</a>
+                    <li class="nav-item d-none d-lg-flex">
+                        <a  href="/web/inicio#section-contact" class="nav-link">Contáctanos PQRS</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Preguntas Frecuentes</a>
+                    <li class="nav-item d-none d-lg-flex">
+                        <a  href="/web/inicio#section-preguntas-frecuentes" class="nav-link">Preguntas Frecuentes</a>
                     </li>
                     <li class="nav-item">
                         <span class="nav-link">Derechos reservados © 2021 LISTOS SAS</span>

@@ -26,7 +26,7 @@ export class LoadingModalService {
   }
 
   public show(event:boolean): void {
-    // console.log('ACTIVAMOS SHOW SERVICE', event);
+    console.log('ACTIVAMOS SHOW SERVICE', event);
     this.subject.next(event);
   }
 
@@ -44,7 +44,7 @@ export class LoadingModalService {
 @Component({
   selector: 'app-spinner-overlay',
   template: `
-  <!--<p-dialog header="Información" 
+  <p-dialog header="Información" 
   [closable]="true"
     [(visible)]="displayModal && hasContent" 
     [modal]="true"
@@ -58,13 +58,12 @@ export class LoadingModalService {
         <div class="col-12 col-lg-10 mx-auto">
           <app-alert (onEmitContentStatus)="GetAlertContentStatus($event)"></app-alert>
         </div>
-        
       </div>
     </div>
     <ng-template pTemplate="footer">
-      <a [routerLink]="displayNextPage" class="btn btn-cancelForm d-inline-flex" (click)="closeModal()" *ngIf="displayNextPage">Siguiente sección</a>  
+      <!--<a [routerLink]="displayNextPage" class="btn btn-cancelForm d-inline-flex" (click)="closeModal()" *ngIf="displayNextPage">Siguiente sección</a>--> 
     </ng-template>
-  </p-dialog>-->`,
+  </p-dialog>`,
 })
 //<button (click)="closeModal()" class="btn-success">
 //<i class="las la-times mr-1 text-lg"></i>
@@ -75,6 +74,7 @@ export class SpinnerOverlayComponent implements OnInit, OnDestroy{
   displayModal: boolean = false;
   displayNextPage: any = false;
   hasContent:boolean=false;
+  
   modalSubscription: Subscription = new Subscription;
   routeSubscription: Subscription = new Subscription;
   nextPageSubscription: Subscription = new Subscription;

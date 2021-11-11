@@ -12,4 +12,36 @@
             &:active{}
         }
     }
+    &-outlineBlanco{
+        padding: .6rem 3rem;
+        border: 1px solid #fff;
+        border-radius: 0px;
+    }
+    &-submit{
+        border-radius: 0px !important;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        font-weight: 600;
+    }
+    &-volverGeneral{
+        display: flex;
+        align-items: center;
+        padding: 12px 0;
+        line-height: 1;
+        font-weight: 500;
+        border:0px;
+        box-shadow: none;
+        transition: all 0.3s ease-in-out;
+        i{  
+            background-color: #fff;
+            color: $color-verde_1;
+            width: 40px;
+            height: 40px;
+            border-radius: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 10px 0 rgb(0 0 0 / 7%);
+        }
+    }
 }

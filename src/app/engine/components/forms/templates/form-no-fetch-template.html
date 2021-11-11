@@ -1,6 +1,6 @@
 <div *ngIf="!ready || !conectorFormulario || !oldValuesCargados" class="row text-center">
   <div class="col-12 text-center">
-  <app-loading-spinner class="text-center" [messageLoading]="messageCustomLoading"></app-loading-spinner>
+    <app-loading-spinner class="text-center" [messageLoading]="messageCustomLoading"></app-loading-spinner>
   </div>
 </div>
 <app-structure-form *ngIf="conectorFormulario?.form" class="row" 

@@ -9,16 +9,20 @@ $color-blanco: #fff;
 $color-rojo_1: #FD6563;
 
 $color-gris_1: #5F5F5F;
+$color-gris_2: #474746;
+$color-gris_3: #606060;
 
 $color-grisClaro_1: #F1F1F1;
+$color-grisClaro_2: #F7F7F7;
 
 $color-grisOscuro_1: #2E302D;
 $color-grisOscuro_2: #333333;
 
-$color-negro_1: #121212;
+$color-negro_1: #000000;
 $color-negro_2: #1d292e;
 
 $color-verde_1: #24B34D;
+$color-verde_2: #56CC75;
 
 $color-amarillo-1: #D4ED00;
 
@@ -35,6 +39,7 @@ $color-morado-1: #816DDD;
 
 // FONT
 $raleway-font: 'Raleway', sans-serif;
+$poppins-font: 'Poppins', sans-serif;
 
 // MEDIA QUERIES
 
@@ -43,7 +48,7 @@ $M991: 'screen and (max-width: 991px)';
 
 $m760: 'screen and (min-width: 760px)';
 $m1024: 'screen and (min-width: 1024px)';
-$m1280: 'screen and (min-width: 1280px)';
+$m1200: 'screen and (min-width: 1200px)';
 $m1366: 'screen and (min-width: 1366px)';
 $m1440: 'screen and (min-width: 1440px)';
 $m1680: 'screen and (min-width: 1680px)';

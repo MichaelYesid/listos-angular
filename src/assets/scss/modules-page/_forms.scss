@@ -1,0 +1,216 @@
+/* FORMS */
+.form{
+    label{
+        height: 30px;
+        font-size: 15px;
+        margin-bottom: 0;
+        line-height: 1;
+        font-weight: 600;
+    }
+    input,
+    select{
+        &.form-control{
+            height: 55px;
+            border-radius: 0px;
+        }
+    }
+    app-autocomplete,
+    app-badgeset,
+    app-autocomplete-freetext {
+        & ngb-typeahead-window{
+            width: calc(100% - 10px);
+            font-size: 12px;
+            overflow-x: scroll;
+        }
+    }
+    app-currency-input{
+        p-inputnumber{
+            display: block;
+            .p-inputnumber.p-component{
+                width: 100%;
+            }
+        }
+    }
+    .p-inputMontDate{
+        label{
+            display: block;
+        }
+        p-calendar{
+            display: block;
+            &>span{
+                width: 100%;
+            }
+            .p-inputtext{
+                height: 55px;
+                border-radius: 6px;
+                width: 100%;
+            }
+        }
+    }
+    .form-group{
+        margin-bottom: 24px !important;
+        padding-left: 5px;
+        padding-right: 5px;
+        @media #{ $m760 }{
+            padding-right: 15px;
+        }
+        &.m-0{
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+    }
+    .custom-file-input{
+        height: 55px;
+    }
+    .custom-file{
+        height: 55px;
+        .custom-file-label,
+        .custom-file-label::after{
+            height: 55px;
+            display: flex;
+            align-items: center;
+        }
+        &.is-invalid{
+            & .message-error{
+                & .text-danger{
+                    display: block !important;
+                }
+            }
+        }
+    }
+    .custom-control.custom-checkbox{
+        .custom-control-label{
+            padding-top: 0.25rem;
+            padding-left: 0.5rem;
+            &::before,
+            &::after{
+                border-radius: 2px;
+                width: 1.4rem;
+                height: 1.4rem;
+            }
+        }
+    }
+    .form-group{
+        margin-bottom: 20px;
+        .is-invalid~.message-error .text-danger{
+            display: block;
+        }
+    }
+    .input-group_password,
+    .input-group_datepicker{
+        input{
+            border-right: 0px !important;
+        }
+        .input-group-prepend{
+            cursor: pointer;
+            .input-group-text{
+                border-radius: 0 6px 6px 0 !important;
+                background-color: $color-blanco;
+                // border-left: 0px !important;
+            }
+            &.is-valid{
+                .input-group-text{
+                    border-color: $color-verde_1;
+                }
+            }
+            &.is-invalid{
+                .input-group-text{
+                    border-color: $color-rojo_1;
+                }
+            }
+        }
+    }
+    .input-group_datepicker{
+        ngb-datepicker{
+            min-width: 20rem;
+        }
+        .ngb-dp-day, .ngb-dp-week-number, .ngb-dp-weekday{
+            width: 2.8rem;
+            & > .btn-light{
+                width: 2.8rem;
+            }
+        }
+    }
+    .input-group_autocomplete{
+        input{
+            border-radius: 6px 6px 6px 6px !important;
+        }
+        &.freetext{
+            input{
+                border-radius: 6px 0px 0px 6px !important;
+                border-right: 0px !important;
+            }
+        }
+        .input-group-append{
+            &.is-valid{
+                .btn-setValue{
+                    border-color: $color-verde_1;
+                    &:hover,
+                    &:focus,
+                    &:active{
+                        background-color: $color-gris_1;
+                        color: $color-negro_2;
+                    }
+                }
+            }
+            &.is-invalid{
+                .btn-setValue{
+                    border-color: $color-rojo_1;
+                    &:hover,
+                    &:focus,
+                    &:active{
+                        background-color: $color-gris_1;
+                        color: $color-negro_2;
+                    }
+                }
+            }
+        }
+        .btn-setValue{
+            color: $color-negro_2;
+            border: 1px solid #ced4da;
+            &:hover,
+            &:focus,
+            &:active{
+                background-color: $color-verde_1;
+                color: $color-blanco;
+            }
+        }
+    }
+    select{
+        &.form-control.is-invalid,
+        &.was-validated.form-control:invalid{
+            background-position: right calc(.375em + 1.1875rem) center;
+        }
+        &.form-control.is-valid, 
+        &.was-validated.form-control:valid{
+            background-position: right calc(.375em + 1.1875rem) center;
+        }
+    }
+    .list-file-added{
+        h5{
+            position: relative;
+            padding-bottom: 1rem;
+            &:before{
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100px;
+                border-bottom: 1px solid $color-gris_1;
+                display: block;
+            }
+        }
+    }
+    .form-row_repeaterItem{
+        background-color: $color-gris_2;
+        border-radius: 6px;
+        padding: 2rem .5rem .5rem .5rem;
+        box-shadow: 0 5px 10px 0 rgb(0 0 0 / 5%);
+        input,
+        select{
+            &.form-control{
+                height: 40px;
+            }
+        }
+    }
+}

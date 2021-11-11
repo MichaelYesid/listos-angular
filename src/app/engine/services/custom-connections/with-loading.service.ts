@@ -24,7 +24,8 @@ export class WithLoadingService {
     tryInterval_ms?: number,
     ErrFoo?: any,
     ProcessingFoo?: any,
-    FinallyFoo?: any
+    FinallyFoo?: any,
+    args?:any,
   ){
 
     const FormProcessingFoo = (error:any,args:any) =>{
@@ -57,13 +58,11 @@ export class WithLoadingService {
       FinallyFoo(args)
     }
     
-    const response = await this.httpRequestService.POST(apiURL,data,FormSuccessFoo,numberOfTries,tryInterval_ms,FormErrorFoo,FormProcessingFoo,FormFinallyFoo);
-    // console.log(response);
-  
-    if(response.status !== undefined && response.status == 'success'){
-      this.loadingModalService.showNextPage('jjj');
-    }
-    
+    const response = await this.httpRequestService.POST(apiURL,data,FormSuccessFoo,numberOfTries,tryInterval_ms,FormErrorFoo,FormProcessingFoo,FormFinallyFoo, args);
+    // console.log('MOSTRAMOS DATA FROM POST WITHLOADING: ', response);
+    // if(response.status !== undefined && response.status == 'success'){
+    //   this.loadingModalService.showNextPage('jjj');
+    // }
     return response;
   }
 }

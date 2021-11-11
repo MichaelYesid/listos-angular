@@ -1,0 +1,110 @@
+body{
+    position: relative;
+    line-height: 1.4;
+    font-family: $raleway-font;
+    font-size: 15px;
+    color: $color-gris_2;
+    font-size: 0.95rem;
+}
+
+.container{
+    @media #{$m1200}{
+        max-width: 1200px; 
+    }
+    @media #{$m1440}{
+        max-width: 1366px; 
+    }
+    @media #{$m1680}{
+        max-width: 1440px; 
+    }
+    @media #{$m1920}{
+        max-width: 1680px;
+    }
+}
+
+a{
+    text-decoration: none !important;
+    text-shadow: none !important;
+    color: initial;
+    line-height: 1.1;
+}
+
+a.underlined{
+    text-decoration: underline !important;
+}
+
+ul{
+    li{
+        list-style: none;
+    }
+}
+
+p,a,li,span{
+    font-weight: 300;
+}
+
+.p-component{
+    font-family: $raleway-font !important;
+}
+
+
+.p-dialog{
+	border: 0px !important;
+	width: 90vw !important;
+    font-family: $raleway-font !important;
+	@media #{$m760}{
+		width: 80vw !important;
+	}
+	@media #{$m1024}{
+		width: 38vw !important;
+	}
+	.p-dialog-header{
+		border-radius: 0 !important;
+        border:0;
+        background: $color-verde_1;
+        color:white;
+        .p-dialog-header-close-icon{
+            border:none;
+            padding:7px;
+            border-radius: 1px 1px 0 0  !important;
+            color:white;
+        }
+	}
+    .p-dialog-content{
+        padding-top: 2rem !important;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            width: 9px;
+        }
+        &::-webkit-scrollbar-track {
+            background: $color-blanco;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $color-gris_1;
+            border-radius: 6px;
+        }
+        @media #{$m1024}{
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    }
+	.p-dialog-footer{
+		display: flex;
+		justify-content: center;
+		border-radius: 0 !important;
+        border-top: 0px;
+        padding-top: 0px;
+        button{
+            font-family: $raleway-font !important;
+            &:hover,
+            &:focus,
+            &:active{
+                color: $color-blanco !important;
+            }
+        }
+	}
+}
+
+.p-dialog-mask.p-component-overlay{
+    background-color: rgba(0, 0, 0, 0.6);
+}
